@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Play-Bold.ttf">
+            <string>Play-Bold</string>
+        </array>
+        <array key="Play-Regular.ttf">
+            <string>Play-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Single Sanau Alert-->
+        <scene sceneID="fBl-ym-L49">
+            <objects>
+                <viewController storyboardIdentifier="SingleSanauAlert" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nMo-HU-2Zv" customClass="SingleSanauAlert" customModule="InspectorSanau" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kd7-Ez-A6s">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AsL-Zh-cUk">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xxk-pJ-BNb">
+                                        <rect key="frame" x="47" y="321" width="320" height="254"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sanauIcon" translatesAutoresizingMaskIntoConstraints="NO" id="VRI-EE-dMQ">
+                                                <rect key="frame" x="120.5" y="32" width="79" height="23"/>
+                                                <color key="tintColor" name="alertLogoColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="79" id="5rs-Ub-N9P"/>
+                                                    <constraint firstAttribute="height" constant="23" id="KVR-U7-aYK"/>
+                                                </constraints>
+                                            </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hHI-BQ-GbO">
+                                                <rect key="frame" x="16" y="71" width="288" height="0.5"/>
+                                                <color key="backgroundColor" name="TextColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="0.69999999999999996" id="9wO-un-foF"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="piy-n8-cvE">
+                                                <rect key="frame" x="16" y="129" width="288" height="35"/>
+                                                <string key="text">Найдено “Новое устройство”.
+Подключить?</string>
+                                                <fontDescription key="fontDescription" name="Play-Regular" family="Play" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXG-ae-4qN">
+                                                <rect key="frame" x="16" y="189" width="288" height="45"/>
+                                                <color key="backgroundColor" name="TextColor2"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="N9g-Ph-EZk"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Play-Regular" family="Play" pointSize="15"/>
+                                                <state key="normal" title="Ok">
+                                                    <color key="titleColor" name="MutableTitleColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="okButtonTapped:" destination="nMo-HU-2Zv" eventType="touchUpInside" id="dTF-aM-t9v"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwQ-wJ-kT7">
+                                                <rect key="frame" x="16" y="91" width="288" height="28"/>
+                                                <fontDescription key="fontDescription" name="Play-Bold" family="Play" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" name="BackViewColor"/>
+                                        <constraints>
+                                            <constraint firstItem="gXG-ae-4qN" firstAttribute="top" secondItem="piy-n8-cvE" secondAttribute="bottom" constant="25" id="0fZ-Xf-fT4"/>
+                                            <constraint firstItem="gXG-ae-4qN" firstAttribute="leading" secondItem="xxk-pJ-BNb" secondAttribute="leading" constant="16" id="2J3-1W-5xH"/>
+                                            <constraint firstAttribute="trailing" secondItem="piy-n8-cvE" secondAttribute="trailing" constant="16" id="9ZH-P8-BcI"/>
+                                            <constraint firstItem="VRI-EE-dMQ" firstAttribute="top" secondItem="xxk-pJ-BNb" secondAttribute="top" constant="32" id="ApS-iC-n8J"/>
+                                            <constraint firstAttribute="trailing" secondItem="gXG-ae-4qN" secondAttribute="trailing" constant="16" id="GrD-9x-Zzy"/>
+                                            <constraint firstAttribute="width" constant="320" id="JCJ-LG-HuS"/>
+                                            <constraint firstItem="piy-n8-cvE" firstAttribute="leading" secondItem="xxk-pJ-BNb" secondAttribute="leading" constant="16" id="P6L-r3-YxK"/>
+                                            <constraint firstItem="hHI-BQ-GbO" firstAttribute="top" secondItem="VRI-EE-dMQ" secondAttribute="bottom" constant="16" id="Ta1-xT-rd5"/>
+                                            <constraint firstItem="hwQ-wJ-kT7" firstAttribute="leading" secondItem="xxk-pJ-BNb" secondAttribute="leading" constant="16" id="UyO-4C-pbn"/>
+                                            <constraint firstAttribute="trailing" secondItem="hwQ-wJ-kT7" secondAttribute="trailing" constant="16" id="XCN-3H-ZXh"/>
+                                            <constraint firstItem="hwQ-wJ-kT7" firstAttribute="top" secondItem="hHI-BQ-GbO" secondAttribute="bottom" constant="19.5" id="XFe-k6-Gdy"/>
+                                            <constraint firstItem="hHI-BQ-GbO" firstAttribute="leading" secondItem="xxk-pJ-BNb" secondAttribute="leading" constant="16" id="XWi-N0-AgQ"/>
+                                            <constraint firstAttribute="bottom" secondItem="gXG-ae-4qN" secondAttribute="bottom" constant="20" id="aTA-Lg-uBx"/>
+                                            <constraint firstAttribute="trailing" secondItem="hHI-BQ-GbO" secondAttribute="trailing" constant="16" id="g6e-in-pwf"/>
+                                            <constraint firstItem="piy-n8-cvE" firstAttribute="top" secondItem="hwQ-wJ-kT7" secondAttribute="bottom" constant="10" id="jhS-Ji-ENh"/>
+                                            <constraint firstItem="VRI-EE-dMQ" firstAttribute="centerX" secondItem="xxk-pJ-BNb" secondAttribute="centerX" id="qDD-RT-DKs"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" name="HelperBackground"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="xxk-pJ-BNb" firstAttribute="centerY" secondItem="AsL-Zh-cUk" secondAttribute="centerY" id="Sa7-Ei-Haf"/>
+                                    <constraint firstItem="xxk-pJ-BNb" firstAttribute="centerX" secondItem="AsL-Zh-cUk" secondAttribute="centerX" id="eKh-YY-kDP"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="uO0-Uy-urg" appends="YES" id="b85-A0-gh7"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LLK-eM-LbL"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="AsL-Zh-cUk" firstAttribute="trailing" secondItem="LLK-eM-LbL" secondAttribute="trailing" id="aOj-Ly-0Tm"/>
+                            <constraint firstAttribute="bottom" secondItem="AsL-Zh-cUk" secondAttribute="bottom" id="btL-BV-pwL"/>
+                            <constraint firstItem="AsL-Zh-cUk" firstAttribute="top" secondItem="kd7-Ez-A6s" secondAttribute="top" id="v8N-3y-WRA"/>
+                            <constraint firstItem="AsL-Zh-cUk" firstAttribute="leading" secondItem="LLK-eM-LbL" secondAttribute="leading" id="vyo-jO-qRz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="alertBackView" destination="xxk-pJ-BNb" id="jIa-P4-f0P"/>
+                        <outlet property="backView" destination="AsL-Zh-cUk" id="Prd-3e-yXy"/>
+                        <outlet property="descriptionLabel" destination="piy-n8-cvE" id="kkg-Ce-ynk"/>
+                        <outlet property="deviderView" destination="hHI-BQ-GbO" id="tpP-Q0-qhV"/>
+                        <outlet property="logoImageView" destination="VRI-EE-dMQ" id="g0h-7X-zi7"/>
+                        <outlet property="okButton" destination="gXG-ae-4qN" id="nTp-Sb-U3A"/>
+                        <outlet property="titleLabel" destination="hwQ-wJ-kT7" id="ic3-na-FnQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CHq-6C-uMP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uBx-27-pnF">
+                    <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tapGestureRecognizer id="uO0-Uy-urg">
+                    <connections>
+                        <action selector="tapGesture:" destination="nMo-HU-2Zv" id="Q7m-9e-did"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-4118.4615384615381" y="3162.0853080568718"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="sanauIcon" width="79" height="18"/>
+        <namedColor name="BackViewColor">
+            <color red="0.97600001096725464" green="0.97600001096725464" blue="0.97600001096725464" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="HelperBackground">
+            <color red="0.20784313725490194" green="0.31764705882352939" blue="0.41176470588235292" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="MutableTitleColor">
+            <color red="0.12600000202655792" green="0.14800000190734863" blue="0.19200000166893005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="TextColor">
+            <color red="0.47099998593330383" green="0.48500001430511475" blue="0.54100000858306885" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="TextColor2">
+            <color red="0.093999996781349182" green="0.62699997425079346" blue="0.98400002717971802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="alertLogoColor">
+            <color red="0.1379999965429306" green="0.17900000512599945" blue="0.23100000619888306" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

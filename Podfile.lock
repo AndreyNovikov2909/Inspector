@@ -1,0 +1,60 @@
+PODS:
+  - Alamofire (5.4.2)
+  - Differentiator (4.0.1)
+  - Realm (4.4.1):
+    - Realm/Headers (= 4.4.1)
+  - Realm/Headers (4.4.1)
+  - RealmSwift (4.4.1):
+    - Realm (= 4.4.1)
+  - RxCocoa (5.1.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxDataSources (4.0.1):
+    - Differentiator (~> 4.0)
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
+  - RxRelay (5.1.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.2)
+  - RxViewController (1.0.0):
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
+  - SwiftRadix (1.0.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.2)
+  - RealmSwift (= 4.4.1)
+  - RxCocoa (~> 5.0)
+  - RxDataSources (~> 4.0)
+  - RxSwift (~> 5.0)
+  - RxViewController
+  - SwiftRadix
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Differentiator
+    - Realm
+    - RealmSwift
+    - RxCocoa
+    - RxDataSources
+    - RxRelay
+    - RxSwift
+    - RxViewController
+    - SwiftRadix
+
+SPEC CHECKSUMS:
+  Alamofire: bfbc4c2fe5909b1d94fb4ef2277c6b3727ef5dae
+  Differentiator: 886080237d9f87f322641dedbc5be257061b0602
+  Realm: 4eb04d7487bd43c0581256f40b424eafb711deff
+  RealmSwift: 3eb8924ff7100df5928c7602f71d0fec51e7c9c5
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 1e2e1f9570186967f617e49128ed26ccf1bafc8e
+  RxViewController: 7330a46e5c31cd680db169da4c9fc8676e975a81
+  SwiftRadix: a81388c8f6b76cec240cb34027cf2dcf4ebdb6ac
+
+PODFILE CHECKSUM: 254b19555be7abb1b6f1cd47cd6bccd4afb1c182
+
+COCOAPODS: 1.10.1

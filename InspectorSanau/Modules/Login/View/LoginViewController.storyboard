@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eb2-wC-VMy">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Play-Regular.ttf">
+            <string>Play-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="kEg-lv-0f4">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eb2-wC-VMy" customClass="LoginViewController" customModule="InspectorSanau" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PWz-h1-OtQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5xG-KW-OZK">
+                                <rect key="frame" x="0.0" y="54" width="414" height="908"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ebz-5T-bCT">
+                                        <rect key="frame" x="20" y="35" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSH-id-ByN">
+                                        <rect key="frame" x="116" y="606" width="159" height="38"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Play-Regular" family="Play" pointSize="22"/>
+                                        <state key="normal" title="Reset password"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="BackViewColor"/>
+                                <constraints>
+                                    <constraint firstItem="Ebz-5T-bCT" firstAttribute="top" secondItem="5xG-KW-OZK" secondAttribute="top" constant="35" id="DkY-f4-LZc"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ebz-5T-bCT" secondAttribute="trailing" constant="20" id="t3z-J8-8RS"/>
+                                    <constraint firstItem="Ebz-5T-bCT" firstAttribute="leading" secondItem="5xG-KW-OZK" secondAttribute="leading" constant="20" id="ztZ-4S-jll"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gie-fB-VwG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5xG-KW-OZK" firstAttribute="top" secondItem="gie-fB-VwG" secondAttribute="top" constant="10" id="EHl-ZJ-LPA"/>
+                            <constraint firstItem="gie-fB-VwG" firstAttribute="bottom" secondItem="5xG-KW-OZK" secondAttribute="bottom" constant="-100" id="HwN-zM-C93"/>
+                            <constraint firstItem="gie-fB-VwG" firstAttribute="trailing" secondItem="5xG-KW-OZK" secondAttribute="trailing" id="krU-rI-6oR"/>
+                            <constraint firstItem="5xG-KW-OZK" firstAttribute="leading" secondItem="gie-fB-VwG" secondAttribute="leading" id="sm4-nX-Oxc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="wii-f7-fRr"/>
+                    <connections>
+                        <outlet property="backView" destination="5xG-KW-OZK" id="8DV-Bj-PFm"/>
+                        <outlet property="resetPasswordButton" destination="FSH-id-ByN" id="Mzg-hg-rbD"/>
+                        <outlet property="titleLabel" destination="Ebz-5T-bCT" id="Bsg-61-tEq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DWL-NO-ZYt" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="768" y="-142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="BackViewColor">
+            <color red="0.97600001096725464" green="0.97600001096725464" blue="0.97600001096725464" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

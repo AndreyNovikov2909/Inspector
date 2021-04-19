@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="G8I-qo-BzI">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Play-Regular.ttf">
+            <string>Play-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Error Alert Controller-->
+        <scene sceneID="och-2c-Moz">
+            <objects>
+                <viewController storyboardIdentifier="ErrorAlertController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="G8I-qo-BzI" customClass="ErrorAlertController" customModule="InspectorSanau" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="s3q-aG-nXE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sp1-pU-iL9">
+                                <rect key="frame" x="155.5" y="787" width="103" height="50"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dan" translatesAutoresizingMaskIntoConstraints="NO" id="3iV-SM-cbe">
+                                        <rect key="frame" x="16" y="10" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="IhE-kW-MzC"/>
+                                            <constraint firstAttribute="width" constant="30" id="uGi-Nj-iyP"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4od-EW-33A">
+                                        <rect key="frame" x="56" y="15" width="31" height="20"/>
+                                        <fontDescription key="fontDescription" name="Play-Regular" family="Play" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="Red"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="PY8-qC-0YP"/>
+                                    <constraint firstItem="4od-EW-33A" firstAttribute="leading" secondItem="3iV-SM-cbe" secondAttribute="trailing" constant="10" id="SBd-4h-FRO"/>
+                                    <constraint firstAttribute="trailing" secondItem="4od-EW-33A" secondAttribute="trailing" constant="16" id="Tf6-PV-o1I"/>
+                                    <constraint firstItem="3iV-SM-cbe" firstAttribute="leading" secondItem="Sp1-pU-iL9" secondAttribute="leading" constant="16" id="bh5-NK-0cO"/>
+                                    <constraint firstItem="3iV-SM-cbe" firstAttribute="centerY" secondItem="Sp1-pU-iL9" secondAttribute="centerY" id="dLo-sP-l9d"/>
+                                    <constraint firstItem="4od-EW-33A" firstAttribute="centerY" secondItem="Sp1-pU-iL9" secondAttribute="centerY" id="eQG-jf-LBk"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uCq-S7-enB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Sp1-pU-iL9" firstAttribute="centerX" secondItem="uCq-S7-enB" secondAttribute="centerX" id="WxF-BD-ocC"/>
+                            <constraint firstItem="uCq-S7-enB" firstAttribute="bottom" secondItem="Sp1-pU-iL9" secondAttribute="bottom" constant="25" id="wXq-yd-OXb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backView" destination="Sp1-pU-iL9" id="qJq-Dc-PZq"/>
+                        <outlet property="imageView" destination="3iV-SM-cbe" id="2CN-iB-KOf"/>
+                        <outlet property="titleLabel" destination="4od-EW-33A" id="tjk-Jl-koM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SWg-Mf-9gM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="150.72463768115944" y="120.53571428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="dan" width="23" height="21.5"/>
+        <namedColor name="Red">
+            <color red="0.91870784760000002" green="0.34182429310000001" blue="0.34115302559999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

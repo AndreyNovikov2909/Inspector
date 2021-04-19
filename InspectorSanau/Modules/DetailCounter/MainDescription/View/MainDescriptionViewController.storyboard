@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Item 1-->
+        <scene sceneID="hjr-5I-uDP">
+            <objects>
+                <viewController storyboardIdentifier="MainDescriptionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fLR-Z3-FVf" customClass="MainDescriptionViewController" customModule="InspectorSanau" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pTF-On-Jol">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="07f-FL-xbv">
+                                <rect key="frame" x="0.0" y="54" width="414" height="908"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8US-LN-B5d">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJn-SB-wMV">
+                                                <rect key="frame" x="0.0" y="6" width="207" height="33"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <state key="normal" title="Devices"/>
+                                                <connections>
+                                                    <action selector="devicesButtonTapped:" destination="fLR-Z3-FVf" eventType="touchUpInside" id="EUe-XJ-OBK"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YdD-ic-phY">
+                                                <rect key="frame" x="207" y="6" width="207" height="33"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <state key="normal" title="Rooms"/>
+                                                <connections>
+                                                    <action selector="roomsButtonTapped:" destination="fLR-Z3-FVf" eventType="touchUpInside" id="T7h-fw-AiO"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.54303753379999997" green="0.96784442660000003" blue="0.99608916039999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="7Ly-Nl-mOX"/>
+                                        </constraints>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pQf-nb-QSU">
+                                        <rect key="frame" x="0.0" y="44" width="414" height="2"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tBQ-jf-oA5">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="2"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="wAg-bU-phv"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" name="BackViewColor"/>
+                                <constraints>
+                                    <constraint firstItem="8US-LN-B5d" firstAttribute="leading" secondItem="07f-FL-xbv" secondAttribute="leading" id="00H-2e-8Py"/>
+                                    <constraint firstAttribute="trailing" secondItem="8US-LN-B5d" secondAttribute="trailing" id="EMQ-8o-TZd"/>
+                                    <constraint firstAttribute="trailing" secondItem="pQf-nb-QSU" secondAttribute="trailing" id="JCm-7o-j1d"/>
+                                    <constraint firstItem="pQf-nb-QSU" firstAttribute="leading" secondItem="07f-FL-xbv" secondAttribute="leading" id="bJC-72-T9u"/>
+                                    <constraint firstItem="pQf-nb-QSU" firstAttribute="top" secondItem="07f-FL-xbv" secondAttribute="top" constant="44" id="mev-ba-kuE"/>
+                                    <constraint firstItem="8US-LN-B5d" firstAttribute="top" secondItem="07f-FL-xbv" secondAttribute="top" id="nz8-t0-Xzy"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Hre-Br-W1W"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Hre-Br-W1W" firstAttribute="bottom" secondItem="07f-FL-xbv" secondAttribute="bottom" constant="-100" id="Cjx-gm-7JK"/>
+                            <constraint firstItem="Hre-Br-W1W" firstAttribute="trailing" secondItem="07f-FL-xbv" secondAttribute="trailing" id="Z23-aM-jjg"/>
+                            <constraint firstItem="07f-FL-xbv" firstAttribute="top" secondItem="Hre-Br-W1W" secondAttribute="top" constant="10" id="cS2-hN-vxT"/>
+                            <constraint firstItem="07f-FL-xbv" firstAttribute="leading" secondItem="Hre-Br-W1W" secondAttribute="leading" id="vvu-XE-zuP"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="nSP-BH-CW1"/>
+                    <connections>
+                        <outlet property="backView" destination="07f-FL-xbv" id="PeV-ZA-ie9"/>
+                        <outlet property="devicesButton" destination="gJn-SB-wMV" id="axp-d1-Ns6"/>
+                        <outlet property="overView" destination="tBQ-jf-oA5" id="GpD-jg-ihe"/>
+                        <outlet property="roomsButton" destination="YdD-ic-phY" id="g9i-W3-hIA"/>
+                        <outlet property="stackView" destination="8US-LN-B5d" id="zRF-9m-3pb"/>
+                        <outlet property="underView" destination="pQf-nb-QSU" id="04c-qg-qLO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rDq-zL-slQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="796" y="85"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="BackViewColor">
+            <color red="0.97600001096725464" green="0.97600001096725464" blue="0.97600001096725464" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

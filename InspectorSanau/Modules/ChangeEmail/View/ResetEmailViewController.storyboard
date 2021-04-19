@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Jyx-ey-Wnx">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Reset Email View Controller-->
+        <scene sceneID="Mu7-Yl-zFh">
+            <objects>
+                <viewController storyboardIdentifier="ResetEmailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Jyx-ey-Wnx" customClass="ResetEmailViewController" customModule="InspectorSanau" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4iE-6y-Bgt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RGS-1A-yme">
+                                <rect key="frame" x="0.0" y="54" width="414" height="908"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pzy-oj-7o6">
+                                        <rect key="frame" x="20" y="35" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="BackViewColor"/>
+                                <constraints>
+                                    <constraint firstItem="Pzy-oj-7o6" firstAttribute="top" secondItem="RGS-1A-yme" secondAttribute="top" constant="35" id="96C-Ml-bY8"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pzy-oj-7o6" secondAttribute="trailing" constant="20" id="MlG-SL-Ikn"/>
+                                    <constraint firstItem="Pzy-oj-7o6" firstAttribute="leading" secondItem="RGS-1A-yme" secondAttribute="leading" constant="20" id="dpS-sN-s6J"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="CZl-Bu-scr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RGS-1A-yme" firstAttribute="top" secondItem="CZl-Bu-scr" secondAttribute="top" constant="10" id="C42-99-Kr9"/>
+                            <constraint firstItem="CZl-Bu-scr" firstAttribute="trailing" secondItem="RGS-1A-yme" secondAttribute="trailing" id="DW4-dL-O4c"/>
+                            <constraint firstItem="RGS-1A-yme" firstAttribute="leading" secondItem="CZl-Bu-scr" secondAttribute="leading" id="Y61-CV-rNJ"/>
+                            <constraint firstItem="CZl-Bu-scr" firstAttribute="bottom" secondItem="RGS-1A-yme" secondAttribute="bottom" constant="-100" id="q3U-Ym-SH5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="mt8-xO-2dx"/>
+                    <connections>
+                        <outlet property="backView" destination="RGS-1A-yme" id="eKL-Hc-aDz"/>
+                        <outlet property="titleLabel" destination="Pzy-oj-7o6" id="WyZ-Qn-7sc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gzm-OC-rxe" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="768" y="-142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="BackViewColor">
+            <color red="0.97600001096725464" green="0.97600001096725464" blue="0.97600001096725464" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

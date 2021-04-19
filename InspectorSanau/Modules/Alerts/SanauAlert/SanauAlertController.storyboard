@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q28-Vn-VT3">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Play-Regular.ttf">
+            <string>Play-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Sanau Alert Controller-->
+        <scene sceneID="lUu-Qt-UIU">
+            <objects>
+                <viewController storyboardIdentifier="SanauAlertController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Q28-Vn-VT3" customClass="SanauAlertController" customModule="InspectorSanau" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="s0S-ie-SV0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QcP-ks-Dop">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c6N-hP-AEB">
+                                        <rect key="frame" x="47" y="338" width="320" height="220"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sanauIcon" translatesAutoresizingMaskIntoConstraints="NO" id="dgj-hR-Ty7">
+                                                <rect key="frame" x="120.5" y="32" width="79" height="23"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="79" id="pfZ-nF-dcP"/>
+                                                    <constraint firstAttribute="height" constant="23" id="yr2-q4-Otn"/>
+                                                </constraints>
+                                            </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I8j-G7-pmv">
+                                                <rect key="frame" x="16" y="71" width="288" height="0.5"/>
+                                                <color key="backgroundColor" name="TextColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="0.69999999999999996" id="kPU-ZY-uNv"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AlY-WF-ukF">
+                                                <rect key="frame" x="16" y="87.5" width="288" height="51.5"/>
+                                                <string key="text">Найдено “Новое устройство”.
+Подключить?</string>
+                                                <fontDescription key="fontDescription" name="Play-Regular" family="Play" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M0b-MR-rSD">
+                                                <rect key="frame" x="16" y="159" width="130" height="45"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="Fda-iG-tvB"/>
+                                                    <constraint firstAttribute="width" constant="130" id="vpN-A0-BsS"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Play-Regular" family="Play" pointSize="15"/>
+                                                <state key="normal" title="Cancel">
+                                                    <color key="titleColor" name="BackViewColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="cancelButtonTapped:" destination="Q28-Vn-VT3" eventType="touchUpInside" id="l38-68-7D9"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LSJ-3z-tH1">
+                                                <rect key="frame" x="174" y="159" width="130" height="45"/>
+                                                <color key="backgroundColor" name="TextColor2"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="130" id="a7Z-GL-IIX"/>
+                                                    <constraint firstAttribute="height" constant="45" id="ufm-Ip-7dG"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Play-Regular" family="Play" pointSize="15"/>
+                                                <state key="normal" title="Ok">
+                                                    <color key="titleColor" name="MutableTitleColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="okButtonTapped:" destination="Q28-Vn-VT3" eventType="touchUpInside" id="cNh-EA-NAa"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" name="BackViewColor"/>
+                                        <constraints>
+                                            <constraint firstItem="LSJ-3z-tH1" firstAttribute="top" secondItem="AlY-WF-ukF" secondAttribute="bottom" constant="20" id="4Do-Br-yde"/>
+                                            <constraint firstItem="dgj-hR-Ty7" firstAttribute="centerX" secondItem="c6N-hP-AEB" secondAttribute="centerX" id="C5a-km-CWV"/>
+                                            <constraint firstItem="I8j-G7-pmv" firstAttribute="leading" secondItem="c6N-hP-AEB" secondAttribute="leading" constant="16" id="CUO-X1-ch7"/>
+                                            <constraint firstAttribute="width" constant="320" id="Hkx-U6-naP"/>
+                                            <constraint firstItem="I8j-G7-pmv" firstAttribute="top" secondItem="dgj-hR-Ty7" secondAttribute="bottom" constant="16" id="JDa-Gd-gun"/>
+                                            <constraint firstAttribute="trailing" secondItem="AlY-WF-ukF" secondAttribute="trailing" constant="16" id="Jof-hb-nT4"/>
+                                            <constraint firstItem="AlY-WF-ukF" firstAttribute="top" secondItem="I8j-G7-pmv" secondAttribute="bottom" constant="16" id="V91-th-Pwq"/>
+                                            <constraint firstItem="dgj-hR-Ty7" firstAttribute="top" secondItem="c6N-hP-AEB" secondAttribute="top" constant="32" id="WT2-3O-CG7"/>
+                                            <constraint firstItem="AlY-WF-ukF" firstAttribute="leading" secondItem="c6N-hP-AEB" secondAttribute="leading" constant="16" id="X2c-ws-2bR"/>
+                                            <constraint firstAttribute="trailing" secondItem="LSJ-3z-tH1" secondAttribute="trailing" constant="16" id="bL5-Cz-d1f"/>
+                                            <constraint firstAttribute="bottom" secondItem="LSJ-3z-tH1" secondAttribute="bottom" constant="16" id="bUI-YK-J3O"/>
+                                            <constraint firstItem="M0b-MR-rSD" firstAttribute="leading" secondItem="c6N-hP-AEB" secondAttribute="leading" constant="16" id="efi-ob-Kyy"/>
+                                            <constraint firstAttribute="trailing" secondItem="I8j-G7-pmv" secondAttribute="trailing" constant="16" id="pAH-8s-uQj"/>
+                                            <constraint firstAttribute="height" constant="220" id="pXE-7k-6lK"/>
+                                            <constraint firstAttribute="bottom" secondItem="M0b-MR-rSD" secondAttribute="bottom" constant="16" id="z0q-fC-lFW"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" name="HelperBackground"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="c6N-hP-AEB" firstAttribute="centerY" secondItem="QcP-ks-Dop" secondAttribute="centerY" id="hmg-q0-Grf"/>
+                                    <constraint firstItem="c6N-hP-AEB" firstAttribute="centerX" secondItem="QcP-ks-Dop" secondAttribute="centerX" id="njm-PH-TO7"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="O45-UV-eXj" appends="YES" id="7Er-6D-hGn"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FUK-sj-ku6"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="QcP-ks-Dop" secondAttribute="bottom" id="4Vs-lx-7bR"/>
+                            <constraint firstItem="QcP-ks-Dop" firstAttribute="leading" secondItem="FUK-sj-ku6" secondAttribute="leading" id="EXe-9w-KmS"/>
+                            <constraint firstItem="QcP-ks-Dop" firstAttribute="trailing" secondItem="FUK-sj-ku6" secondAttribute="trailing" id="Sz1-tl-Vxf"/>
+                            <constraint firstItem="QcP-ks-Dop" firstAttribute="top" secondItem="s0S-ie-SV0" secondAttribute="top" id="zTc-6Z-NzV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="alertBackView" destination="c6N-hP-AEB" id="zTl-VI-lBm"/>
+                        <outlet property="backView" destination="QcP-ks-Dop" id="HXD-YS-IvQ"/>
+                        <outlet property="cancelButton" destination="M0b-MR-rSD" id="0VD-ZX-K3v"/>
+                        <outlet property="okButton" destination="LSJ-3z-tH1" id="NSp-z7-s77"/>
+                        <outlet property="titleLabel" destination="AlY-WF-ukF" id="yyd-j6-2l6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7u8-Lg-l9m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="O45-UV-eXj">
+                    <connections>
+                        <action selector="tapGesture:" destination="Q28-Vn-VT3" id="tY3-BI-Fg8"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-4118.4615384615381" y="3162.0853080568718"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="sanauIcon" width="79" height="18"/>
+        <namedColor name="BackViewColor">
+            <color red="0.97600001096725464" green="0.97600001096725464" blue="0.97600001096725464" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="HelperBackground">
+            <color red="0.76899999380111694" green="0.76899999380111694" blue="0.76899999380111694" alpha="0.69999998807907104" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MutableTitleColor">
+            <color red="0.12600000202655792" green="0.14800000190734863" blue="0.19200000166893005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="TextColor">
+            <color red="0.47099998593330383" green="0.48500001430511475" blue="0.54100000858306885" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="TextColor2">
+            <color red="0.093999996781349182" green="0.62699997425079346" blue="0.98400002717971802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
