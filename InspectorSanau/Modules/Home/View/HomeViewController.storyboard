@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iHb-mX-4W4">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Play-Regular.ttf">
+            <string>Play-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="5Iq-D4-5aE">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iHb-mX-4W4" customClass="HomeViewController" customModule="InspectorSanau" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ncO-mr-H3D">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="available items" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fST-mS-J44">
+                                <rect key="frame" x="16" y="60" width="114.5" height="20"/>
+                                <fontDescription key="fontDescription" name="Play-Regular" family="Play" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATQ-Vf-jvm">
+                                <rect key="frame" x="388" y="60" width="10" height="20"/>
+                                <fontDescription key="fontDescription" name="Play-Regular" family="Play" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="73m-iP-ik3">
+                                <rect key="frame" x="0.0" y="96" width="414" height="766"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ioh-qp-5bb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ATQ-Vf-jvm" firstAttribute="top" secondItem="ioh-qp-5bb" secondAttribute="top" constant="16" id="JPy-qj-29u"/>
+                            <constraint firstItem="ioh-qp-5bb" firstAttribute="trailing" secondItem="ATQ-Vf-jvm" secondAttribute="trailing" constant="16" id="K8s-8u-AY9"/>
+                            <constraint firstItem="fST-mS-J44" firstAttribute="top" secondItem="ioh-qp-5bb" secondAttribute="top" constant="16" id="OHP-by-4jI"/>
+                            <constraint firstItem="73m-iP-ik3" firstAttribute="leading" secondItem="ioh-qp-5bb" secondAttribute="leading" id="cCZ-ir-EPN"/>
+                            <constraint firstItem="fST-mS-J44" firstAttribute="leading" secondItem="ncO-mr-H3D" secondAttribute="leading" constant="16" id="d2U-oC-y6V"/>
+                            <constraint firstItem="ioh-qp-5bb" firstAttribute="trailing" secondItem="73m-iP-ik3" secondAttribute="trailing" id="ljm-P2-6zz"/>
+                            <constraint firstItem="73m-iP-ik3" firstAttribute="top" secondItem="fST-mS-J44" secondAttribute="bottom" constant="16" id="rRy-th-a7P"/>
+                            <constraint firstItem="ioh-qp-5bb" firstAttribute="bottom" secondItem="73m-iP-ik3" secondAttribute="bottom" id="wI5-J7-e9C"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="availableLabel" destination="fST-mS-J44" id="Zsu-89-eZw"/>
+                        <outlet property="countLabel" destination="ATQ-Vf-jvm" id="UFb-TA-jeJ"/>
+                        <outlet property="tableView" destination="73m-iP-ik3" id="bb7-yg-f3a"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X61-l8-UT1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="43" y="44"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

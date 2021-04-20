@@ -19,10 +19,10 @@ extension UIViewController {
         
         present(errorAlert, animated: false) {
             errorAlert.animate {
-                errorAlert.dismiss(animated: false, completion: nil)
+//                errorAlert.dismiss(animated: false, completion: nil)
             }
         }
-        
+        print("DEBUG: call \(#function)")
         errorAlert.titleLabel.text = title
         return errorAlert.view
     }

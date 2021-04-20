@@ -42,7 +42,8 @@ class ErrorAlertController: UIViewController {
                 
                 self.backView.transform = CGAffineTransform(translationX: 0, y: 100)
             } completion: { _ in
-                complition()
+                self.dismiss(animated: false, completion: nil)
+
             }
         }
 

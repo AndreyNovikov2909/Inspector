@@ -59,6 +59,17 @@
 		0C2F746A2625F9CA00AE921E /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F74692625F9CA00AE921E /* SettingsCoordinator.swift */; };
 		0C2F746E2625F9DB00AE921E /* SearchDeviceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F746D2625F9DB00AE921E /* SearchDeviceCoordinator.swift */; };
 		0C2F74712625F9E400AE921E /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F74702625F9E400AE921E /* HomeCoordinator.swift */; };
+		0C3CBBDA262EF1E700238FBA /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C3CBBD9262EF1E700238FBA /* HomeViewController.storyboard */; };
+		0C3CBBDE262EF3D300238FBA /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3CBBDD262EF3D300238FBA /* HomeTableViewCell.swift */; };
+		0C3CBBE1262EF3EA00238FBA /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C3CBBE0262EF3EA00238FBA /* HomeTableViewCell.xib */; };
+		0C3CBBE4262EF72600238FBA /* HomeViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3CBBE3262EF72600238FBA /* HomeViewViewModel.swift */; };
+		0C3CBBE7262EF89E00238FBA /* HomeWrapped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3CBBE6262EF89E00238FBA /* HomeWrapped.swift */; };
+		0C65BB19262EC5FD00A653AF /* DescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C65BB17262EC5FD00A653AF /* DescriptionTableViewCell.swift */; };
+		0C65BB1A262EC5FD00A653AF /* DescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C65BB18262EC5FD00A653AF /* DescriptionTableViewCell.xib */; };
+		0C65BB1E262EC80A00A653AF /* DescriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C65BB1D262EC80A00A653AF /* DescriptionViewModel.swift */; };
+		0C65BB21262ECA7E00A653AF /* DescriptionWrapped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C65BB20262ECA7E00A653AF /* DescriptionWrapped.swift */; };
+		0C67E0CF262F30970005B2E1 /* HomeBluetoothTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C67E0CD262F30970005B2E1 /* HomeBluetoothTableViewCell.swift */; };
+		0C67E0D0262F30970005B2E1 /* HomeBluetoothTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C67E0CE262F30970005B2E1 /* HomeBluetoothTableViewCell.xib */; };
 		0C7CF8AA2629A75900FEB0DE /* SearchDeviceViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C7CF8A92629A75900FEB0DE /* SearchDeviceViewController.storyboard */; };
 		0C7CF8AD2629A76F00FEB0DE /* SearchDeviceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7CF8AC2629A76F00FEB0DE /* SearchDeviceViewModel.swift */; };
 		0C7CF8B22629B56600FEB0DE /* BluetoothTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7CF8B02629B56600FEB0DE /* BluetoothTableViewCell.swift */; };
@@ -170,6 +181,17 @@
 		0C2F74692625F9CA00AE921E /* SettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinator.swift; sourceTree = "<group>"; };
 		0C2F746D2625F9DB00AE921E /* SearchDeviceCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDeviceCoordinator.swift; sourceTree = "<group>"; };
 		0C2F74702625F9E400AE921E /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		0C3CBBD9262EF1E700238FBA /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
+		0C3CBBDD262EF3D300238FBA /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		0C3CBBE0262EF3EA00238FBA /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
+		0C3CBBE3262EF72600238FBA /* HomeViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewViewModel.swift; sourceTree = "<group>"; };
+		0C3CBBE6262EF89E00238FBA /* HomeWrapped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWrapped.swift; sourceTree = "<group>"; };
+		0C65BB17262EC5FD00A653AF /* DescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		0C65BB18262EC5FD00A653AF /* DescriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionTableViewCell.xib; sourceTree = "<group>"; };
+		0C65BB1D262EC80A00A653AF /* DescriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewModel.swift; sourceTree = "<group>"; };
+		0C65BB20262ECA7E00A653AF /* DescriptionWrapped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionWrapped.swift; sourceTree = "<group>"; };
+		0C67E0CD262F30970005B2E1 /* HomeBluetoothTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBluetoothTableViewCell.swift; sourceTree = "<group>"; };
+		0C67E0CE262F30970005B2E1 /* HomeBluetoothTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeBluetoothTableViewCell.xib; sourceTree = "<group>"; };
 		0C7CF8A92629A75900FEB0DE /* SearchDeviceViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchDeviceViewController.storyboard; sourceTree = "<group>"; };
 		0C7CF8AC2629A76F00FEB0DE /* SearchDeviceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDeviceViewModel.swift; sourceTree = "<group>"; };
 		0C7CF8B02629B56600FEB0DE /* BluetoothTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothTableViewCell.swift; sourceTree = "<group>"; };
@@ -495,6 +517,26 @@
 			name = Coordinator;
 			sourceTree = "<group>";
 		};
+		0C3CBBDC262EF3C200238FBA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0C3CBBDD262EF3D300238FBA /* HomeTableViewCell.swift */,
+				0C3CBBE0262EF3EA00238FBA /* HomeTableViewCell.xib */,
+				0C67E0CD262F30970005B2E1 /* HomeBluetoothTableViewCell.swift */,
+				0C67E0CE262F30970005B2E1 /* HomeBluetoothTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		0C65BB16262EC5D600A653AF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0C65BB17262EC5FD00A653AF /* DescriptionTableViewCell.swift */,
+				0C65BB18262EC5FD00A653AF /* DescriptionTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		0C7CF8AF2629B54B00FEB0DE /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -545,6 +587,8 @@
 		0C7CF8BF2629C0C400FEB0DE /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				0C65BB1D262EC80A00A653AF /* DescriptionViewModel.swift */,
+				0C65BB20262ECA7E00A653AF /* DescriptionWrapped.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -552,6 +596,7 @@
 		0C7CF8C02629C0C800FEB0DE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0C65BB16262EC5D600A653AF /* Cell */,
 				0CB1F1A2262CC00A00BEC968 /* DescriptionViewController.swift */,
 				0CB1F1A5262CC0A600BEC968 /* DescriptionViewController.storyboard */,
 			);
@@ -946,7 +991,9 @@
 		0CBE03A42624D3CA00EA538D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0C3CBBDC262EF3C200238FBA /* Cell */,
 				0CBE03A62624D3DD00EA538D /* HomeViewController.swift */,
+				0C3CBBD9262EF1E700238FBA /* HomeViewController.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -954,6 +1001,8 @@
 		0CBE03A52624D3CF00EA538D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				0C3CBBE3262EF72600238FBA /* HomeViewViewModel.swift */,
+				0C3CBBE6262EF89E00238FBA /* HomeWrapped.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1039,17 +1088,21 @@
 				0C2F73BE2625C2F600AE921E /* LoginViewController.storyboard in Resources */,
 				0C09341E262722230044ED83 /* SanauAlertController.storyboard in Resources */,
 				0CB1F1A9262CC0AF00BEC968 /* BluetoothDataViewController.storyboard in Resources */,
+				0C65BB1A262EC5FD00A653AF /* DescriptionTableViewCell.xib in Resources */,
 				0C7CF8AA2629A75900FEB0DE /* SearchDeviceViewController.storyboard in Resources */,
 				0C2F744A2625E8A000AE921E /* ResetEmailViewController.storyboard in Resources */,
 				0CB1F1F2262DA1EF00BEC968 /* ElectrinicMetterTableViewCell.xib in Resources */,
 				0C09344326273B830044ED83 /* SettingsViewController.storyboard in Resources */,
 				0CB1F1A6262CC0A600BEC968 /* DescriptionViewController.storyboard in Resources */,
 				0CAB2F08262889CB00A244EF /* ChangePasswordViewController.storyboard in Resources */,
+				0C67E0D0262F30970005B2E1 /* HomeBluetoothTableViewCell.xib in Resources */,
 				0C7CF8B32629B56600FEB0DE /* BluetoothTableViewCell.xib in Resources */,
 				0CB8F5E4262DE3BD00697E5B /* ErrorAlertController.storyboard in Resources */,
+				0C3CBBDA262EF1E700238FBA /* HomeViewController.storyboard in Resources */,
 				0C093428262725C70044ED83 /* SingleSanauAlert.storyboard in Resources */,
 				0CB1F1ED262D9F4900BEC968 /* BluetoothDataViewControllerTitleTableViewCell.xib in Resources */,
 				0CB1F1BC262CC2CB00BEC968 /* MainDescriptionViewController.storyboard in Resources */,
+				0C3CBBE1262EF3EA00238FBA /* HomeTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1104,16 +1157,19 @@
 			files = (
 				0C2F74002625C6E000AE921E /* Counter.swift in Sources */,
 				0C2F73ED2625C61F00AE921E /* HTTPManager.swift in Sources */,
+				0C3CBBE7262EF89E00238FBA /* HomeWrapped.swift in Sources */,
 				0C0934392627396C0044ED83 /* UIButton + extention.swift in Sources */,
 				0C95442F2624CEBC00DFDB04 /* DevicesCollectionViewCell.swift in Sources */,
 				0C2F74462625E89100AE921E /* ResetEmailViewController.swift in Sources */,
 				0C2F742E2625D0A300AE921E /* NSAtributtedString + extention.swift in Sources */,
+				0C3CBBDE262EF3D300238FBA /* HomeTableViewCell.swift in Sources */,
 				0C2F740C2625C71600AE921E /* DevicePresentable.swift in Sources */,
 				0C95442A2624CE9600DFDB04 /* DevicesCollectionView.swift in Sources */,
 				0C2F742F2625D0A300AE921E /* Array + Extention.swift in Sources */,
 				0C2F74012625C6E000AE921E /* Validator.swift in Sources */,
 				0C093421262722700044ED83 /* SanauAlertController.swift in Sources */,
 				0C95440C2624CD0300DFDB04 /* LoginView.swift in Sources */,
+				0C65BB19262EC5FD00A653AF /* DescriptionTableViewCell.swift in Sources */,
 				0C2F742D2625D0A300AE921E /* String + extention.swift in Sources */,
 				0C2F746E2625F9DB00AE921E /* SearchDeviceCoordinator.swift in Sources */,
 				0C2F73F02625C63900AE921E /* HTTPRouter.swift in Sources */,
@@ -1129,9 +1185,12 @@
 				0C9544052624CCA500DFDB04 /* K.swift in Sources */,
 				0C2F741A2625C96C00AE921E /* LoginViewController.swift in Sources */,
 				0CAB2F0B262889F300A244EF /* ChangePasswordViewModel.swift in Sources */,
+				0C65BB21262ECA7E00A653AF /* DescriptionWrapped.swift in Sources */,
 				0CB1F1BF262CC2E700BEC968 /* MainDescriptionCoordinator.swift in Sources */,
+				0C65BB1E262EC80A00A653AF /* DescriptionViewModel.swift in Sources */,
 				0C2F73DE2625C5AB00AE921E /* KeyboardService.swift in Sources */,
 				0CAB2F0E26288A0200A244EF /* ChangePasswordCoordinator.swift in Sources */,
+				0C3CBBE4262EF72600238FBA /* HomeViewViewModel.swift in Sources */,
 				0CBE03A72624D3DD00EA538D /* HomeViewController.swift in Sources */,
 				0C9543BC2624BAF900DFDB04 /* AppDelegate.swift in Sources */,
 				0C7CF8AD2629A76F00FEB0DE /* SearchDeviceViewModel.swift in Sources */,
@@ -1182,6 +1241,7 @@
 				0C2F73DF2625C5AB00AE921E /* KeyboardManager.swift in Sources */,
 				0CB1F1AD262CC13000BEC968 /* DescriptionCoordinator.swift in Sources */,
 				0CB1F1A3262CC00A00BEC968 /* DescriptionViewController.swift in Sources */,
+				0C67E0CF262F30970005B2E1 /* HomeBluetoothTableViewCell.swift in Sources */,
 				0C9543BE2624BAF900DFDB04 /* SceneDelegate.swift in Sources */,
 				0C2F742C2625D0A300AE921E /* NSError + Extention.swift in Sources */,
 				0C2F740D2625C71600AE921E /* VerificationModel.swift in Sources */,

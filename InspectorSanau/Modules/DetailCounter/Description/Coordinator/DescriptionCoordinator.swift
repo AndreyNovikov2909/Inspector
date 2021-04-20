@@ -22,6 +22,9 @@ class DescriptionCoordinator: BaseCoodinator {
     }
     
     override func start() {
-        
+        descriptionViewControlller.builder = { input in
+            let viewModel = DescriptionViewModel(input: input, realmService: try! RealmService(), httpService: HTTPManager())
+            return viewModel
+        }
     }
 }

@@ -9,6 +9,10 @@ import UIKit
 
 class MainDescriptionViewController: UIViewController {
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .darkContent
+    }
+    
     // MARK: - IBOutlets
     
     @IBOutlet weak var backView: UIView!

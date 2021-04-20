@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Play-Regular.ttf">
+            <string>Play-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="118" id="KGk-i7-Jjw" customClass="HomeBluetoothTableViewCell" customModule="InspectorSanau" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="118"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="118"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="09E-Yk-wXt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xn-t8-8tl">
+                                <rect key="frame" x="16" y="13" width="288" height="20"/>
+                                <fontDescription key="fontDescription" name="Play-Regular" family="Play" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrf-Xu-pKM">
+                                <rect key="frame" x="16" y="38" width="288" height="17.5"/>
+                                <fontDescription key="fontDescription" name="Play-Regular" family="Play" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8xn-t8-8tl" firstAttribute="top" secondItem="09E-Yk-wXt" secondAttribute="top" constant="13" id="JJ5-5w-a6C"/>
+                            <constraint firstItem="zrf-Xu-pKM" firstAttribute="leading" secondItem="09E-Yk-wXt" secondAttribute="leading" constant="16" id="Lt5-Qg-rse"/>
+                            <constraint firstAttribute="trailing" secondItem="8xn-t8-8tl" secondAttribute="trailing" constant="16" id="NhW-Fd-Evk"/>
+                            <constraint firstItem="zrf-Xu-pKM" firstAttribute="top" secondItem="8xn-t8-8tl" secondAttribute="bottom" constant="5" id="OTg-1m-FR5"/>
+                            <constraint firstAttribute="height" constant="70" id="mjN-JW-NZb"/>
+                            <constraint firstAttribute="trailing" secondItem="zrf-Xu-pKM" secondAttribute="trailing" constant="16" id="pX1-eW-Cd5"/>
+                            <constraint firstItem="8xn-t8-8tl" firstAttribute="leading" secondItem="09E-Yk-wXt" secondAttribute="leading" constant="16" id="ygr-iT-SC2"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="09E-Yk-wXt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="9wY-yG-As4"/>
+                    <constraint firstAttribute="trailing" secondItem="09E-Yk-wXt" secondAttribute="trailing" id="j1A-2Q-QHa"/>
+                    <constraint firstItem="09E-Yk-wXt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="zBR-iP-bUL"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="backView" destination="09E-Yk-wXt" id="vVJ-Ga-dSz"/>
+                <outlet property="fullNameLabel" destination="zrf-Xu-pKM" id="kwL-wL-q7J"/>
+                <outlet property="originalNameLabel" destination="8xn-t8-8tl" id="dMk-ao-5qd"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="136.60714285714286"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

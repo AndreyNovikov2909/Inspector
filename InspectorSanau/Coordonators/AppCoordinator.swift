@@ -35,15 +35,15 @@ class AppCoordinator: BaseCoodinator {
         
 
         
-        if !DefaultsService.shared.isAuth() {
+//        if DefaultsService.shared.isAuth() {
             let mainTabBarCoordinator = HomeTabCoordinator(navigationController: navigationController)
             add(mainTabBarCoordinator)
             mainTabBarCoordinator.start()
             
-        } else {
-            let loginCoordinator = LoginViewCoordinator(navigationController: navigationController)
-            add(loginCoordinator)
-            loginCoordinator.start()
-        }
+//        } else {
+//            let loginCoordinator = LoginViewCoordinator(navigationController: navigationController)
+//            add(loginCoordinator)
+//            loginCoordinator.start()
+//        }
     }
 }

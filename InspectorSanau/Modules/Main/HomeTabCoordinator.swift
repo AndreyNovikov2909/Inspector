@@ -56,7 +56,7 @@ class HomeTabCoordinator: BaseCoodinator {
 
 private extension HomeTabCoordinator {
     func setupTabCoordinators() {
-        let homeCoordinator = HomeCoordinator(navigationController: homeNavigation)
+        let homeCoordinator = HomeCoordinator(navigationController: homeNavigation, state: .city)
         let favoriteCoordinator = SearchDeviceCoordinator(navigationController: favoriteNavigation)
         let settingsCoordinator = SettingsCoordinator(navigationController: settingsNavigation)
         
