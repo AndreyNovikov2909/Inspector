@@ -18,21 +18,31 @@ class HomeCoordinator: BaseCoodinator {
     private let navigationController: UINavigationController
     private let homeViewController: HomeViewController
     private let dispose = DisposeBag()
-    private let state: SearchState
+    private var state: SearchState
+    private let needSet: Bool
     
     // MARK: - Object livecycle
     
-    init(navigationController: UINavigationController, state: SearchState) {
+    init(navigationController: UINavigationController, state: SearchState, needSet: Bool = false) {
         self.navigationController = navigationController
         self.homeViewController = UIStoryboard.loadViewController()
         self.state = state
+        self.needSet = needSet
     }
     
     
     override func start() {
+        if let city = DefaultsService.shared.getCity(), let disctric = DefaultsService.shared.getDiscric(), city.isEmpty == false, disctric.isEmpty == false {
+            state = .done(city: city, district: disctric)
+        }
+        
         switch state {
         case .city:
-            navigationController.setViewControllers([homeViewController], animated: false)
+            if needSet {
+                navigationController.pushViewController(homeViewController, animated: true)
+            } else {
+                navigationController.setViewControllers([homeViewController], animated: false)
+            }
         case .district:
             navigationController.pushViewController(homeViewController, animated: true)
         case .done:
@@ -52,6 +62,13 @@ class HomeCoordinator: BaseCoodinator {
                 .drive()
                 .disposed(by: self.dispose)
             
+            viewModel
+                .routing
+                .showFilter
+                .map({ self.showFilter() })
+                .drive()
+                .disposed(by: self.dispose)
+            
             return viewModel
         }
     }
@@ -66,15 +83,23 @@ private extension HomeCoordinator {
             let homeCoordinator = HomeCoordinator(navigationController: navigationController, state: .district(city: homeDetail.title))
             homeCoordinator.start()
             homeCoordinator.add(homeCoordinator)
+            DefaultsService.shared.setSearchCity(homeDetail.title)
         case .district(let city):
             let homeCoordinator = HomeCoordinator(navigationController: navigationController, state: .done(city: city, district: homeDetail.title))
             homeCoordinator.start()
             homeCoordinator.add(homeCoordinator)
+            DefaultsService.shared.setSearchDistric(homeDetail.title)
         case .done:
             let mainDescriptionCoordinator = MainDescriptionCoordinator(navigationController: navigationController,
                                                                     item: BluetoothWapped(name: homeDetail.originalName))
             mainDescriptionCoordinator.start()
             add(mainDescriptionCoordinator)
         }
+    }
+    
+    func showFilter() {
+        let filterCoordinator = FilterCoordinatoe(navigationController: navigationController)
+        filterCoordinator.start()
+        add(filterCoordinator)
     }
 }

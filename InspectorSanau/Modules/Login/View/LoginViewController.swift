@@ -233,7 +233,7 @@ private extension LoginViewController {
         navigationItem.title = "Вход"
         navigationItem.leftBarButtonItem = nil
         navigationItem.hidesBackButton = true
-        navigationController?.navigationBar.barStyle = .black
+        navigationController?.navigationBar.barStyle = .default
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.barTintColor = K.Colors.navigationColor
         navigationController?.navigationBar.isTranslucent = false

@@ -101,7 +101,7 @@ private extension SearchDeviceViewController {
         navigationItem.title = "Поиск устройств"
         navigationItem.leftBarButtonItem = nil
         navigationItem.hidesBackButton = true
-        navigationController?.navigationBar.barStyle = .black
+        navigationController?.navigationBar.barStyle = .default
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.barTintColor = K.Colors.navigationColor
         navigationController?.navigationBar.isTranslucent = false

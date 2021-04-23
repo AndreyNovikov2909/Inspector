@@ -60,11 +60,17 @@ class SettingsCoordinator: BaseCoodinator {
 private extension SettingsCoordinator {
     func showAuth() {
         DefaultsService.shared.setAuth(value: false)
-        settingsViewController.dismiss(animated: true) {
-            let loginCoordinator = LoginViewCoordinator(navigationController: self.navigationController)
-            self.add(loginCoordinator)
-            loginCoordinator.start()
-        }
+        let window = UIApplication.shared.window
+        let navigation = UINavigationController()
+        let loginCoordinator = LoginViewCoordinator(navigationController: navigation)
+        self.add(loginCoordinator)
+        loginCoordinator.start()
+        
+        navigation.setViewControllers([loginCoordinator.rootViewController], animated: false)
+        window?.rootViewController = navigation
+        
+        settingsViewController.dismiss(animated: true)
+        
         remove(self)
     }
     

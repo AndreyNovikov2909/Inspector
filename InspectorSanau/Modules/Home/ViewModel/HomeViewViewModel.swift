@@ -16,10 +16,10 @@ enum SearchState {
 }
 
 protocol HomeViewViewModelPresentable {
-    typealias Input = (selectedItem: Driver<HomeDetailWrapped>, ())
+    typealias Input = (selectedItem: Driver<HomeDetailWrapped>, showFilter: Driver<Void>)
     typealias Output = (homeItems: Driver<HomeWrapped>, searchState: SearchState)
-    typealias RouterAction = (selectedItem: PublishRelay<HomeDetailWrapped>, ())
-    typealias Routing = (showDetail: Driver<HomeDetailWrapped>, ())
+    typealias RouterAction = (selectedItem: PublishRelay<HomeDetailWrapped>, filterTap: PublishRelay<Void>)
+    typealias Routing = (showDetail: Driver<HomeDetailWrapped>, showFilter: Driver<Void>)
     typealias Builder = (Input) -> HomeViewViewModelPresentable
     
     var input: Input { get set }
@@ -33,11 +33,13 @@ final class HomeViewViewModel: HomeViewViewModelPresentable {
     
     var input: Input
     var output: Output
-    lazy var routing: Routing = (showDetail: routerAction.selectedItem.asDriver(onErrorDriveWith: .never()), ())
+    lazy var routing: Routing = (showDetail: routerAction.selectedItem.asDriver(onErrorDriveWith: .never()),
+                                 showFilter: routerAction.filterTap.asDriver(onErrorDriveWith: .never()))
     
     // MARK: - Private properties
     
-    private let routerAction: RouterAction = (selectedItem: PublishRelay<HomeDetailWrapped>(), ())
+    private let routerAction: RouterAction = (selectedItem: PublishRelay<HomeDetailWrapped>(),
+                                              filterTap: PublishRelay<Void>())
     private let dispose = DisposeBag()
     private let state: SearchState
     private let homeItems = BehaviorRelay<HomeWrapped>.init(value: .init(homeItems: []))
@@ -81,6 +83,7 @@ final class HomeViewViewModel: HomeViewViewModelPresentable {
         }
         
         selectedProcess()
+        showFilterProcess()
     }
 }
 
@@ -93,6 +96,14 @@ private extension HomeViewViewModel {
             guard let self = self else { return }
             guard  let item = event.element else { return }
             self.routerAction.selectedItem.accept(item)
+        }.disposed(by: dispose)
+    }
+    
+    func showFilterProcess() {
+        input.showFilter.asObservable().subscribe { [weak self] (event) in
+            guard let self = self else { return }
+            guard  let item = event.element else { return }
+            self.routerAction.filterTap.accept(item)
         }.disposed(by: dispose)
     }
 }

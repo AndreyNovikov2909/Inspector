@@ -17,6 +17,11 @@
 		0C0934392627396C0044ED83 /* UIButton + extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0934382627396C0044ED83 /* UIButton + extention.swift */; };
 		0C09343D262739860044ED83 /* UIApplication + extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C09343C262739860044ED83 /* UIApplication + extention.swift */; };
 		0C09344326273B830044ED83 /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C09344226273B830044ED83 /* SettingsViewController.storyboard */; };
+		0C16A0582631F00C00173924 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C16A0572631F00C00173924 /* FilterViewController.swift */; };
+		0C16A05B2631F05400173924 /* FilterViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C16A05A2631F05400173924 /* FilterViewController.storyboard */; };
+		0C16A05E2631F10A00173924 /* FIlterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C16A05D2631F10A00173924 /* FIlterViewModel.swift */; };
+		0C16A0682631F38900173924 /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C16A0662631F38900173924 /* FilterTableViewCell.swift */; };
+		0C16A0692631F38900173924 /* FilterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C16A0672631F38900173924 /* FilterTableViewCell.xib */; };
 		0C2F73B52625C27A00AE921E /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F73B22625C27700AE921E /* Presentable.swift */; };
 		0C2F73B72625C27A00AE921E /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F73B42625C27A00AE921E /* Assembly.swift */; };
 		0C2F73BE2625C2F600AE921E /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C2F73BD2625C2F600AE921E /* LoginViewController.storyboard */; };
@@ -75,6 +80,13 @@
 		0C7CF8B22629B56600FEB0DE /* BluetoothTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7CF8B02629B56600FEB0DE /* BluetoothTableViewCell.swift */; };
 		0C7CF8B32629B56600FEB0DE /* BluetoothTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C7CF8B12629B56600FEB0DE /* BluetoothTableViewCell.xib */; };
 		0C7CF8B72629B65400FEB0DE /* BluetoothCellPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7CF8B62629B65400FEB0DE /* BluetoothCellPresentable.swift */; };
+		0C91E01B2631F9AA00367F23 /* FilterCoordinatoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C91E01A2631F9AA00367F23 /* FilterCoordinatoe.swift */; };
+		0C91E0232632C88700367F23 /* TypeMetterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C91E0222632C88700367F23 /* TypeMetterViewController.swift */; };
+		0C91E0532632D9E100367F23 /* TypeMetterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C91E0522632D9E100367F23 /* TypeMetterViewModel.swift */; };
+		0C91E0562632DA4900367F23 /* TypeMetterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C91E0552632DA4900367F23 /* TypeMetterCoordinator.swift */; };
+		0C91E0592632E30900367F23 /* TypeMetterViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C91E0582632E30900367F23 /* TypeMetterViewController.storyboard */; };
+		0C91E0612632E62900367F23 /* TypeMetterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C91E05F2632E62900367F23 /* TypeMetterTableViewCell.swift */; };
+		0C91E0622632E62900367F23 /* TypeMetterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C91E0602632E62900367F23 /* TypeMetterTableViewCell.xib */; };
 		0C9543BC2624BAF900DFDB04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9543BB2624BAF900DFDB04 /* AppDelegate.swift */; };
 		0C9543BE2624BAF900DFDB04 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9543BD2624BAF900DFDB04 /* SceneDelegate.swift */; };
 		0C9543C52624BAFB00DFDB04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C9543C42624BAFB00DFDB04 /* Assets.xcassets */; };
@@ -139,6 +151,11 @@
 		0C0934382627396C0044ED83 /* UIButton + extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + extention.swift"; sourceTree = "<group>"; };
 		0C09343C262739860044ED83 /* UIApplication + extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication + extention.swift"; sourceTree = "<group>"; };
 		0C09344226273B830044ED83 /* SettingsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
+		0C16A0572631F00C00173924 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		0C16A05A2631F05400173924 /* FilterViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FilterViewController.storyboard; sourceTree = "<group>"; };
+		0C16A05D2631F10A00173924 /* FIlterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIlterViewModel.swift; sourceTree = "<group>"; };
+		0C16A0662631F38900173924 /* FilterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
+		0C16A0672631F38900173924 /* FilterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterTableViewCell.xib; sourceTree = "<group>"; };
 		0C2F73B22625C27700AE921E /* Presentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
 		0C2F73B42625C27A00AE921E /* Assembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
 		0C2F73BD2625C2F600AE921E /* LoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
@@ -197,6 +214,13 @@
 		0C7CF8B02629B56600FEB0DE /* BluetoothTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothTableViewCell.swift; sourceTree = "<group>"; };
 		0C7CF8B12629B56600FEB0DE /* BluetoothTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BluetoothTableViewCell.xib; sourceTree = "<group>"; };
 		0C7CF8B62629B65400FEB0DE /* BluetoothCellPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothCellPresentable.swift; sourceTree = "<group>"; };
+		0C91E01A2631F9AA00367F23 /* FilterCoordinatoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCoordinatoe.swift; sourceTree = "<group>"; };
+		0C91E0222632C88700367F23 /* TypeMetterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeMetterViewController.swift; sourceTree = "<group>"; };
+		0C91E0522632D9E100367F23 /* TypeMetterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeMetterViewModel.swift; sourceTree = "<group>"; };
+		0C91E0552632DA4900367F23 /* TypeMetterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeMetterCoordinator.swift; sourceTree = "<group>"; };
+		0C91E0582632E30900367F23 /* TypeMetterViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TypeMetterViewController.storyboard; sourceTree = "<group>"; };
+		0C91E05F2632E62900367F23 /* TypeMetterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeMetterTableViewCell.swift; sourceTree = "<group>"; };
+		0C91E0602632E62900367F23 /* TypeMetterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypeMetterTableViewCell.xib; sourceTree = "<group>"; };
 		0C9543B82624BAF900DFDB04 /* InspectorSanau.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InspectorSanau.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C9543BB2624BAF900DFDB04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C9543BD2624BAF900DFDB04 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -302,6 +326,51 @@
 				0C9544332624CF1200DFDB04 /* CGFloat + extention.swift */,
 			);
 			path = "CoreGraphics + extention";
+			sourceTree = "<group>";
+		};
+		0C16A0532631EFD900173924 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				0C16A0542631EFE900173924 /* View */,
+				0C16A0552631EFED00173924 /* ViewModel */,
+				0C16A0562631EFF200173924 /* Coordinator */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
+		0C16A0542631EFE900173924 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0C16A0652631F37B00173924 /* Cell */,
+				0C16A0572631F00C00173924 /* FilterViewController.swift */,
+				0C16A05A2631F05400173924 /* FilterViewController.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0C16A0552631EFED00173924 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0C16A05D2631F10A00173924 /* FIlterViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0C16A0562631EFF200173924 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				0C91E01A2631F9AA00367F23 /* FilterCoordinatoe.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		0C16A0652631F37B00173924 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0C16A0662631F38900173924 /* FilterTableViewCell.swift */,
+				0C16A0672631F38900173924 /* FilterTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		0C2197A92624D1E300BDA62A /* Main */ = {
@@ -621,6 +690,51 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		0C91E01D2631FF2800367F23 /* TypeMetter */ = {
+			isa = PBXGroup;
+			children = (
+				0C91E0212632C86800367F23 /* View */,
+				0C91E0202632C86000367F23 /* ViewModel */,
+				0C91E01F2632C85800367F23 /* Coordinator */,
+			);
+			path = TypeMetter;
+			sourceTree = "<group>";
+		};
+		0C91E01F2632C85800367F23 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				0C91E0552632DA4900367F23 /* TypeMetterCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		0C91E0202632C86000367F23 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0C91E0522632D9E100367F23 /* TypeMetterViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0C91E0212632C86800367F23 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0C91E05B2632E59300367F23 /* Cell */,
+				0C91E0222632C88700367F23 /* TypeMetterViewController.swift */,
+				0C91E0582632E30900367F23 /* TypeMetterViewController.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0C91E05B2632E59300367F23 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0C91E05F2632E62900367F23 /* TypeMetterTableViewCell.swift */,
+				0C91E0602632E62900367F23 /* TypeMetterTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		0C9543AF2624BAF900DFDB04 = {
 			isa = PBXGroup;
 			children = (
@@ -782,6 +896,8 @@
 				0C2197A92624D1E300BDA62A /* Main */,
 				0CBE039D2624D38E00EA538D /* Home */,
 				0CBE039E2624D39300EA538D /* SearchDevice */,
+				0C16A0532631EFD900173924 /* Filter */,
+				0C91E01D2631FF2800367F23 /* TypeMetter */,
 				0C7CF8BA2629C06700FEB0DE /* DetailCounter */,
 				0CBE039F2624D39900EA538D /* Settings */,
 				0CAB2EFF2628897800A244EF /* ChangePassword */,
@@ -1088,10 +1204,13 @@
 				0C2F73BE2625C2F600AE921E /* LoginViewController.storyboard in Resources */,
 				0C09341E262722230044ED83 /* SanauAlertController.storyboard in Resources */,
 				0CB1F1A9262CC0AF00BEC968 /* BluetoothDataViewController.storyboard in Resources */,
+				0C91E0592632E30900367F23 /* TypeMetterViewController.storyboard in Resources */,
 				0C65BB1A262EC5FD00A653AF /* DescriptionTableViewCell.xib in Resources */,
 				0C7CF8AA2629A75900FEB0DE /* SearchDeviceViewController.storyboard in Resources */,
 				0C2F744A2625E8A000AE921E /* ResetEmailViewController.storyboard in Resources */,
 				0CB1F1F2262DA1EF00BEC968 /* ElectrinicMetterTableViewCell.xib in Resources */,
+				0C91E0622632E62900367F23 /* TypeMetterTableViewCell.xib in Resources */,
+				0C16A0692631F38900173924 /* FilterTableViewCell.xib in Resources */,
 				0C09344326273B830044ED83 /* SettingsViewController.storyboard in Resources */,
 				0CB1F1A6262CC0A600BEC968 /* DescriptionViewController.storyboard in Resources */,
 				0CAB2F08262889CB00A244EF /* ChangePasswordViewController.storyboard in Resources */,
@@ -1099,6 +1218,7 @@
 				0C7CF8B32629B56600FEB0DE /* BluetoothTableViewCell.xib in Resources */,
 				0CB8F5E4262DE3BD00697E5B /* ErrorAlertController.storyboard in Resources */,
 				0C3CBBDA262EF1E700238FBA /* HomeViewController.storyboard in Resources */,
+				0C16A05B2631F05400173924 /* FilterViewController.storyboard in Resources */,
 				0C093428262725C70044ED83 /* SingleSanauAlert.storyboard in Resources */,
 				0CB1F1ED262D9F4900BEC968 /* BluetoothDataViewControllerTitleTableViewCell.xib in Resources */,
 				0CB1F1BC262CC2CB00BEC968 /* MainDescriptionViewController.storyboard in Resources */,
@@ -1161,7 +1281,9 @@
 				0C0934392627396C0044ED83 /* UIButton + extention.swift in Sources */,
 				0C95442F2624CEBC00DFDB04 /* DevicesCollectionViewCell.swift in Sources */,
 				0C2F74462625E89100AE921E /* ResetEmailViewController.swift in Sources */,
+				0C91E0612632E62900367F23 /* TypeMetterTableViewCell.swift in Sources */,
 				0C2F742E2625D0A300AE921E /* NSAtributtedString + extention.swift in Sources */,
+				0C91E0562632DA4900367F23 /* TypeMetterCoordinator.swift in Sources */,
 				0C3CBBDE262EF3D300238FBA /* HomeTableViewCell.swift in Sources */,
 				0C2F740C2625C71600AE921E /* DevicePresentable.swift in Sources */,
 				0C95442A2624CE9600DFDB04 /* DevicesCollectionView.swift in Sources */,
@@ -1169,10 +1291,12 @@
 				0C2F74012625C6E000AE921E /* Validator.swift in Sources */,
 				0C093421262722700044ED83 /* SanauAlertController.swift in Sources */,
 				0C95440C2624CD0300DFDB04 /* LoginView.swift in Sources */,
+				0C91E0232632C88700367F23 /* TypeMetterViewController.swift in Sources */,
 				0C65BB19262EC5FD00A653AF /* DescriptionTableViewCell.swift in Sources */,
 				0C2F742D2625D0A300AE921E /* String + extention.swift in Sources */,
 				0C2F746E2625F9DB00AE921E /* SearchDeviceCoordinator.swift in Sources */,
 				0C2F73F02625C63900AE921E /* HTTPRouter.swift in Sources */,
+				0C91E0532632D9E100367F23 /* TypeMetterViewModel.swift in Sources */,
 				0C9544122624CD5400DFDB04 /* GraphView.swift in Sources */,
 				0CB1F1F1262DA1EF00BEC968 /* ElectrinicMetterTableViewCell.swift in Sources */,
 				0C093430262735B10044ED83 /* UIViewController + extention.swift in Sources */,
@@ -1209,6 +1333,7 @@
 				0CBE039B2624D37E00EA538D /* HomeTabBarViewController.swift in Sources */,
 				0CAB2EF426287A2100A244EF /* SettingsViewModel.swift in Sources */,
 				0C2F74342625E6E400AE921E /* Login.swift in Sources */,
+				0C16A05E2631F10A00173924 /* FIlterViewModel.swift in Sources */,
 				0CB1F1E2262D96DB00BEC968 /* ScanObject.swift in Sources */,
 				0C9544342624CF1200DFDB04 /* CGFloat + extention.swift in Sources */,
 				0C09343D262739860044ED83 /* UIApplication + extention.swift in Sources */,
@@ -1231,6 +1356,7 @@
 				0CB1F1B8262CC2B000BEC968 /* MainDescriptionViewController.swift in Sources */,
 				0C9544262624CE6E00DFDB04 /* VerificationCollectionCell.swift in Sources */,
 				0C09342B262725D20044ED83 /* SingleSanauAlert.swift in Sources */,
+				0C91E01B2631F9AA00367F23 /* FilterCoordinatoe.swift in Sources */,
 				0C2F73F32625C66600AE921E /* DefaultsService.swift in Sources */,
 				0C2F73B72625C27A00AE921E /* Assembly.swift in Sources */,
 				0C2F73E62625C5BE00AE921E /* HTTPService.swift in Sources */,
@@ -1248,9 +1374,11 @@
 				0C0934362627394B0044ED83 /* UIView + extention.swift in Sources */,
 				0C2F73E72625C5BE00AE921E /* ApplicationRouter.swift in Sources */,
 				0CC4757B262716C000731675 /* ErrorDescription.swift in Sources */,
+				0C16A0582631F00C00173924 /* FilterViewController.swift in Sources */,
 				0CBE03AB2624D43500EA538D /* SearchDeviceViewController.swift in Sources */,
 				0CAB2EF826287CC100A244EF /* User.swift in Sources */,
 				0C2F740B2625C71600AE921E /* SMSStatus.swift in Sources */,
+				0C16A0682631F38900173924 /* FilterTableViewCell.swift in Sources */,
 				0C2F740E2625C71600AE921E /* VerificationStatus.swift in Sources */,
 				0C95441C2624CDB200DFDB04 /* RoomCollectionView.swift in Sources */,
 			);

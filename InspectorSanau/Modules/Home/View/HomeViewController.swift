@@ -11,12 +11,18 @@ import RxCocoa
 
 class HomeViewController: UIViewController {
     
-        
+    
     // MARK: - IBOutlets
     
     @IBOutlet weak var availableLabel: UILabel!
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBackView: UIView!
+    
+    // MARK: - UI
+    
+    private let searchTextField = MessagesTextField()
+    
     
     // MARK: - ViewModel
     
@@ -26,6 +32,7 @@ class HomeViewController: UIViewController {
     // MARK: - Private propties
     
     private let selectedItem = PublishRelay<HomeDetailWrapped>.init()
+    private let showFilter = PublishRelay<Void>.init()
     private var presentbles: HomeWrapped?
     private let dispose = DisposeBag()
     
@@ -45,6 +52,12 @@ class HomeViewController: UIViewController {
         
         setupNavigationController()
     }
+    
+    // MARK: - Selecctor methods
+    
+    @objc private func handleFilterTapped() {
+        showFilter.accept(Void())
+    }
 }
 
 
@@ -52,7 +65,7 @@ class HomeViewController: UIViewController {
 
 private extension HomeViewController {
     func setupViewModel() {
-        let input = (selectedItem: selectedItem.asDriver(onErrorDriveWith: .never()), ())
+        let input = (selectedItem: selectedItem.asDriver(onErrorDriveWith: .never()), showFilter: showFilter.asDriver(onErrorDriveWith: .never()))
         viewModel = builder(input)
     }
     
@@ -74,6 +87,7 @@ private extension HomeViewController {
     func setupUI() {
         setupLabel()
         setupTableView()
+        setupSearchBackView()
     }
     
     func setupTableView() {
@@ -96,43 +110,41 @@ private extension HomeViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
-
+    
     
     func setupLabel() {
         availableLabel.text = "Всего устройств"
-
+        
         availableLabel.textColor = UIColor(named: "TextColor1")
         countLabel.textColor = UIColor(named: "TextColor1")
     }
     
+    func setupSearchBackView() {
+        searchBackView.backgroundColor = K.Colors.navigationColor
+    }
+    
     func setupNavigationController() {
-
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white,
+                                                                   NSAttributedString.Key.font: UIFont(name: "Play", size: 24) ?? UIFont.systemFont(ofSize: 24, weight: .regular)]
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.barTintColor = K.Colors.navigationColor
+        navigationController?.navigationBar.topItem?.title = ""
+        navigationItem.largeTitleDisplayMode = .never
         
         switch viewModel.output.searchState {
         case .city:
-            navigationController?.navigationBar.prefersLargeTitles = true
-            navigationItem.largeTitleDisplayMode = .always
-            navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white,
-                                                                            NSAttributedString.Key.font: UIFont(name: "Play", size: 26) ?? UIFont.systemFont(ofSize: 26, weight: .regular)]
-            
-            let appearance = UINavigationBarAppearance()
-            appearance.configureWithDefaultBackground()
-            appearance.backgroundColor = K.Colors.navigationColor
-            
-            navigationController?.navigationBar.standardAppearance = appearance
-            navigationController?.navigationBar.scrollEdgeAppearance = appearance
             navigationItem.title = "Устройства"
-
         case .district, .done:
-            
-            navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white,
-                                                                                  NSAttributedString.Key.font: UIFont(name: "Play", size: 24) ?? UIFont.systemFont(ofSize: 24, weight: .regular)]
-            navigationController?.navigationBar.barTintColor = K.Colors.navigationColor
-            navigationController?.navigationBar.tintColor = UIColor.white
-            navigationController?.navigationBar.topItem?.title = ""
-            navigationItem.largeTitleDisplayMode = .never
             navigationItem.title = "Поиск"
+            
         }
+        
+        navigationController?.navigationBar.tintColor = UIColor.white
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "filter"),
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(handleFilterTapped))
     }
 }
 

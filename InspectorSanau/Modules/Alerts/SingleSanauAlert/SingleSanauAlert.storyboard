@@ -127,13 +127,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CHq-6C-uMP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uBx-27-pnF">
-                    <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <tapGestureRecognizer id="uO0-Uy-urg">
                     <connections>
                         <action selector="tapGesture:" destination="nMo-HU-2Zv" id="Q7m-9e-did"/>
@@ -149,7 +142,7 @@
             <color red="0.97600001096725464" green="0.97600001096725464" blue="0.97600001096725464" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="HelperBackground">
-            <color red="0.20784313725490194" green="0.31764705882352939" blue="0.41176470588235292" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.20800000429153442" green="0.31799998879432678" blue="0.41200000047683716" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="MutableTitleColor">
             <color red="0.12600000202655792" green="0.14800000190734863" blue="0.19200000166893005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

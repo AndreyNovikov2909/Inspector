@@ -23,7 +23,10 @@ extension UIViewController {
             }
         }
         print("DEBUG: call \(#function)")
-        errorAlert.titleLabel.text = title
+        if errorAlert.titleLabel != nil {
+            errorAlert.titleLabel.text = title
+        }
+        
         return errorAlert.view
     }
 }
