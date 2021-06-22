@@ -41,39 +41,39 @@ enum ApplicationRouter {
 
 extension ApplicationRouter: HTTPRouter {
     var baseURLString: String {
-        return "http://192.248.186.53:8084/api/v1"
+        return ""
     }
     
     var path: String {
         switch self {
         case .signUp:
-            return "/account/sign-up"
+            return ""
         case .signUpActivation:
-            return "/account/activate"
+            return ""
         case .login:
-            return "/account/sign-in"
+            return ""
         case .resendSMS:
-            return "/account/resend/code"
+            return ""
         case .sendSMS:
-            return "/account/send/code"
+            return ""
         case .getCodeForResetPassword:
-            return "/account/send/reset/code"
+            return ""
         case .checkSMS:
-            return "/account/restore/codeCheck"
+            return ""
         case .confirmNewPassword:
-            return "/account/restore/password"
+            return ""
             
         // rooms
         case .saveRoom:
-            return "/system/add/room"
+            return ""
         case .deleteRoom:
-            return "/system/delete/room"
+            return ""
         case .renameRoom:
-            return "/system/edit/room"
+            return ""
             
         // device
         case .saveDevice:
-            return "/devices/add"
+            return ""
         }
     }
     
