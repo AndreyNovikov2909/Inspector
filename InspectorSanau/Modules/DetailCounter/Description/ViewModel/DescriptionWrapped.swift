@@ -11,3 +11,14 @@ struct DescriptionWrapped: DescriptionPresentable {
     var leftTitle: String
     var rightTitle: String
 }
+
+
+struct UserWrrapped: Decodable {
+    var serialNumber: String?
+    var personalAccountNumber: String?
+    var fullName: String?
+    var location: String?
+    var createdAt: String?
+    var lastFixDate: String?
+    var type: String?
+}

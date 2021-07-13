@@ -57,15 +57,17 @@ final class BluetoothDataViewModel: BluetoothDataViewModelPresentable {
     private let bluetoothPresentable = BehaviorRelay<[BluetoothPresentable]>.init(value: [])
     private let showAlert = BehaviorRelay<Bool>.init(value: false)
     private let dispose = DisposeBag()
+    private let id: String
     
     // MARK: - Init
 
-    init(input: Input, httpManager: HTTPManager, realmSercice: RealmService, deviceObject: DeviceObject) {
+    init(input: Input, httpManager: HTTPManager, realmSercice: RealmService, deviceObject: DeviceObject, id: String) {
         self.input = input
         self.output = BluetoothDataViewModel.output(input: input, dataPresentable: bluetoothPresentable)
         self.deviceObject = deviceObject
         self.httpManager = httpManager
         self.realmService = realmSercice
+        self.id = id
         
         bluetoothManager = BluetoothManager(needToConnect: true, byName: deviceObject.originalName)
         bluetoothManager.myDelegate = self
@@ -104,12 +106,51 @@ private extension BluetoothDataViewModel {
     
     
     func saveProcess(metterValue: Double) {
-        guard let value: DeviceObject = realmService.getObjects().first(where: { $0.originalName == deviceObject.originalName }) else { return }
-        let scanObject = ScanObject()
-        scanObject.metterValue = metterValue
-        scanObject.date = Date().getCurentDate()
-        try? realmService.appendValue(list: value.scanList, value: scanObject)
-        laod(needLoadFirst: true)
+        let date = Date.getStringForServer()
+        let params = ["serialNumber": id,
+                      "indication": "\(metterValue)",
+                      "lastFixDate": date,
+                      "role": "ROLE_OPERATOR"]
+        
+        
+        
+//        guard let value: DeviceObject = self.realmService.getObjects().first(where: { $0.originalName == self.deviceObject.originalName }) else { return }
+//        let scanObject = ScanObject()
+//        scanObject.metterValue = metterValue
+//        scanObject.date = Date().getCurentDate()
+//        try? self.realmService.appendValue(list: value.scanList, value: scanObject)
+//        self.laod(needLoadFirst: true)
+        
+        do {
+            let value: Single<AuthResponse> = try httpManager.request(request: ApplicationRouter.sendBluetoothData(params).asURLRequest())
+            value.subscribeOn(MainScheduler.instance).asObservable().subscribe { (event) in
+                switch event {
+                case .next(let result):
+                    if result.status == 200 {
+                        // MARK: - SEND
+                        
+//
+                        guard let value: DeviceObject = self.realmService.getObjects().first(where: { $0.originalName == self.deviceObject.originalName }) else { return }
+                        let scanObject = ScanObject()
+                        scanObject.metterValue = metterValue
+                        scanObject.date = Date().getCurentDate()
+                        try? self.realmService.appendValue(list: value.scanList, value: scanObject)
+                        self.laod(needLoadFirst: true)
+                        
+                        
+                        
+                    } else {
+                
+                    }
+                case .error(let error):
+                    print(error)
+                case .completed:
+                    break
+                }
+            }.disposed(by: dispose)
+        } catch {
+//            self.routerAction.
+        }
     }
     
     func stopProcess() {
@@ -165,7 +206,7 @@ extension BluetoothDataViewModel: BluetoothManagerDelegate {
     func bluetoothManager(_ bluetoothManager: BluetoothManager, didReciveByteArray byteArray: [UInt8]) {
         let value = String.convert(byteArray: byteArray)
         let doubleValue = value.isEmpty ? 0 : (Double(value) ?? 0)
-       saveProcess(metterValue: doubleValue)
+        saveProcess(metterValue: doubleValue)
     }
     
     func bluetoothManager(_ bluetoothManager: BluetoothManager, didReciveConnectedState state: Bool) {
@@ -173,5 +214,23 @@ extension BluetoothDataViewModel: BluetoothManagerDelegate {
             laod(needLoadFirst: false)
             routerAction.bluetoothIsDisconnected.accept(Void())
         }
+    }
+}
+
+
+extension Date {
+    static func getStringForServer() -> String {
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        
+        return dateFormatter.string(from: date)
+    }
+    
+    func getStringForServer() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        
+        return dateFormatter.string(from: self)
     }
 }

@@ -21,21 +21,31 @@ class MainDescriptionCoordinator: BaseCoodinator {
     private lazy var scrollView = mainDescriptionViewController.scrollView
     
     private let bluetoothDataCoordinator: BluetoothDataCoordinator
-    private let descrionViewCoordinator = DescriptionCoordinator()
+    private lazy var descrionViewCoordinator = DescriptionCoordinator(bluetoothId: bluetoothId)
     private let item: BluetoothWapped
+    private let bluetoothId: String
     
     // MARK: - Object livecycle
     
-    init(navigationController: UINavigationController, item: BluetoothWapped) {
+    init(navigationController: UINavigationController, item: BluetoothWapped, bluetoothId: String) {
+        self.bluetoothId = bluetoothId
         self.navigationController = navigationController
         self.mainDescriptionViewController = UIStoryboard.loadViewController()
+            
         self.item = item
-        self.bluetoothDataCoordinator = BluetoothDataCoordinator(item: item)
-        print(mainDescriptionViewController.view.frame)
+        self.bluetoothDataCoordinator = BluetoothDataCoordinator(item: item, id: bluetoothId)
+    
     }
     
     override func start() {
+        self.mainDescriptionViewController.builder = { input in
+            return MainDescriptionViewModel(input: input, id: self.bluetoothId)
+        }
+        print(mainDescriptionViewController.view.frame)
+
+        
         navigationController.pushViewController(mainDescriptionViewController, animated: true)
+
         
         bluetoothDataCoordinator.start()
         descrionViewCoordinator.start()
@@ -62,5 +72,7 @@ private extension MainDescriptionCoordinator {
         
         bluetoothDataCoordinator.rootViewController.view.frame = frame1
         descrionViewCoordinator.rootViewController.view.frame = frame2
+        
+        mainDescriptionViewController.navigationItem.title = "\(bluetoothId)"
     }
 }

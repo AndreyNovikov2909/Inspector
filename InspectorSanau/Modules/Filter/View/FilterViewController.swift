@@ -76,6 +76,7 @@ private extension FilterViewController {
                                                                               NSAttributedString.Key.font: UIFont(name: "Play", size: 24) ?? UIFont.systemFont(ofSize: 24, weight: .regular)]
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.barTintColor = K.Colors.navigationColor
+        navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.topItem?.title = ""
         navigationItem.largeTitleDisplayMode = .never
         navigationItem.title = "Фильтр"

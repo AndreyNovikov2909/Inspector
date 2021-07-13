@@ -50,6 +50,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="3aL-3H-hrd" firstAttribute="centerY" secondItem="M1c-0x-nCX" secondAttribute="centerY" id="7dz-Bf-mfL"/>
                             <constraint firstItem="xOU-Dy-ihV" firstAttribute="centerY" secondItem="M1c-0x-nCX" secondAttribute="centerY" id="GpC-Fm-hpT"/>

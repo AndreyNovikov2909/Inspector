@@ -71,8 +71,8 @@ class ChangePasswordCoordinator: BaseCoodinator {
  
 private extension ChangePasswordCoordinator {
     func showSettings() {
-        changePasswordViewController.tabBarController?.singlerAlert(title: "Проверьте почту",
-                                                                    description: "Отправили инструкцию для восстановления пароля",
+        changePasswordViewController.tabBarController?.singlerAlert(title: "Изменение пароля",
+                                                                    description: "Ваш пароль был успешно изменен",
                                                                     buttonTitle: "Понятно",
                                                                     delegate: self)
     }

@@ -15,3 +15,19 @@ struct AuthResponse: Decodable {
     var accessToken: String?
     var refreshToken: String?
 }
+
+
+struct Metterresponse: Decodable {
+    var page: Int
+    var size: Int
+    var hasNext: Bool
+    var totalPage: Int
+    var totalElementsOnPage: Int
+    var elementsSize: Int
+    var data: [MetterResponseData]
+}
+
+struct MetterResponseData: Decodable {
+    var serialNumber: String
+    var fullName: String
+}

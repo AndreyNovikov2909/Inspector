@@ -25,6 +25,7 @@ class FilterTableViewCell: UITableViewCell {
         
         setupUI()
     }
+
     
     // MARK: - Setup
     

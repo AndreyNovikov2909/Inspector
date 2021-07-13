@@ -177,8 +177,6 @@ private extension ResetEmailViewController {
         emailTextView.messageTextField.backgroundColor = K.Colors.textFieldBackColor1
         emailTextView.messageTextField.rightButton.tintColor = UIColor(named: "TextFieldRightImageEmptyTextColor")
         
-        
         nextButton.buttonIsEnable(value: false)
     }
-
 }

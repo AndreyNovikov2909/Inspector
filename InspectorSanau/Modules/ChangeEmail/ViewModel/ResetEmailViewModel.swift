@@ -80,7 +80,7 @@ extension ResetEmailViewModel {
     func resetPassword(email: String) {
         let params: [String: Any] = ["email": email]
         
-        guard let result: Single<AuthResponse> = try? httpManager.request(request: ApplicationRouter.getCodeForResetPassword(param: params).asURLRequest()) else {
+        guard let result: Single<AuthResponse> = try? httpManager.request(request: ApplicationRouter.resetPassword(params: params).asURLRequest()) else {
             routingAction.onRequest.accept(.failure(HTTPError.requestIsNil))
             return
         }
@@ -89,10 +89,10 @@ extension ResetEmailViewModel {
             guard let self = self else { return }
             switch event {
             case .next(let response):
-                if let status = response.status, status == 200 {
+                if response.status == nil { // let status = response.status, status == 200
                     self.routingAction.onRequest.accept(.success(Void()))
                 } else {
-                    let error = NSError.generateError(description: response.message, code: response.status)
+                    let error = NSError(domain: "Unowned error", code: -1, userInfo: [:])
                     self.routingAction.onRequest.accept(.failure(error))
                 }
             case .error(let error):

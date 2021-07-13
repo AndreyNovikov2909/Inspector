@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dhS-yn-cl1">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Play-Regular.ttf">
+            <string>Play-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Export Exel View Controller-->
+        <scene sceneID="kpE-2Y-syn">
+            <objects>
+                <viewController storyboardIdentifier="ExportExelViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dhS-yn-cl1" customClass="ExportExelViewController" customModule="InspectorSanau" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hgL-AV-ZH3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="303-Hg-hCI">
+                                <rect key="frame" x="0.0" y="511" width="414" height="435"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n0n-cT-LKc">
+                                        <rect key="frame" x="16" y="261" width="382" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="027-Br-mo3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Play-Regular" family="Play" pointSize="17"/>
+                                        <state key="normal" title="ЗАГРУЗИТЬ"/>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vom-NC-4ah">
+                                        <rect key="frame" x="16" y="166" width="382" height="70"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="ZC6-A2-CW2"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Экспорт Excel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X24-Ok-T3R">
+                                        <rect key="frame" x="127.5" y="26" width="159" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <color key="textColor" name="SMSBack"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sRI-cF-qHg">
+                                        <rect key="frame" x="202" y="120" width="10" height="2"/>
+                                        <color key="backgroundColor" name="ValidationBackgroundSTextF"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="G4M-IW-Fjn"/>
+                                            <constraint firstAttribute="width" constant="10" id="g3i-IK-IdT"/>
+                                        </constraints>
+                                    </view>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="09/09/2021" adjustsFontSizeToFit="NO" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="DIo-3e-UKF" customClass="MessagesTextField" customModule="InspectorSanau" customModuleProvider="target">
+                                        <rect key="frame" x="222" y="101" width="140" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="140" id="3k7-cz-E6X"/>
+                                            <constraint firstAttribute="height" constant="40" id="hoq-bt-m7B"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="09/09/2021" adjustsFontSizeToFit="NO" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="ffV-P4-pOA" customClass="MessagesTextField" customModule="InspectorSanau" customModuleProvider="target">
+                                        <rect key="frame" x="52" y="101" width="140" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="140" id="65G-JI-tb5"/>
+                                            <constraint firstAttribute="height" constant="40" id="MaC-Zo-fa8"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aKA-8T-kjY">
+                                        <rect key="frame" x="16" y="72" width="382" height="0.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="0.69999999999999996" id="QVY-8a-4Vi"/>
+                                        </constraints>
+                                    </view>
+                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="pUg-pX-cCK">
+                                        <rect key="frame" x="337" y="111.5" width="20" height="19"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="19" id="O2P-m6-o6f"/>
+                                            <constraint firstAttribute="width" constant="20" id="vga-ch-xMX"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="PUF-Zr-1TX">
+                                        <rect key="frame" x="168" y="111.5" width="20" height="19"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="kSh-2F-lOY"/>
+                                            <constraint firstAttribute="height" constant="19" id="p6U-7N-gXi"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" name="TfBackground"/>
+                                <constraints>
+                                    <constraint firstItem="pUg-pX-cCK" firstAttribute="centerY" secondItem="DIo-3e-UKF" secondAttribute="centerY" id="3ZN-Sh-Ql1"/>
+                                    <constraint firstItem="vom-NC-4ah" firstAttribute="leading" secondItem="303-Hg-hCI" secondAttribute="leading" constant="16" id="4Nn-8T-5Jz"/>
+                                    <constraint firstItem="sRI-cF-qHg" firstAttribute="top" secondItem="X24-Ok-T3R" secondAttribute="bottom" constant="64" id="4jd-AG-unC"/>
+                                    <constraint firstItem="n0n-cT-LKc" firstAttribute="top" secondItem="vom-NC-4ah" secondAttribute="bottom" constant="25" id="790-kJ-QJN"/>
+                                    <constraint firstItem="X24-Ok-T3R" firstAttribute="top" secondItem="303-Hg-hCI" secondAttribute="top" constant="26" id="AA7-1n-Tk0"/>
+                                    <constraint firstAttribute="trailing" secondItem="aKA-8T-kjY" secondAttribute="trailing" constant="16" id="BXZ-Gd-P3l"/>
+                                    <constraint firstAttribute="trailing" secondItem="n0n-cT-LKc" secondAttribute="trailing" constant="16" id="ECY-iA-ENJ"/>
+                                    <constraint firstItem="aKA-8T-kjY" firstAttribute="leading" secondItem="303-Hg-hCI" secondAttribute="leading" constant="16" id="H5n-h0-3dR"/>
+                                    <constraint firstItem="DIo-3e-UKF" firstAttribute="top" secondItem="X24-Ok-T3R" secondAttribute="bottom" constant="45" id="IfJ-xq-F1W"/>
+                                    <constraint firstItem="X24-Ok-T3R" firstAttribute="centerX" secondItem="303-Hg-hCI" secondAttribute="centerX" id="JwM-YB-O9W"/>
+                                    <constraint firstAttribute="height" constant="435" id="Old-1l-hHL"/>
+                                    <constraint firstAttribute="trailing" secondItem="vom-NC-4ah" secondAttribute="trailing" constant="16" id="PKK-Tr-lEK"/>
+                                    <constraint firstItem="DIo-3e-UKF" firstAttribute="leading" secondItem="sRI-cF-qHg" secondAttribute="trailing" constant="10" id="RzR-bH-njD"/>
+                                    <constraint firstItem="PUF-Zr-1TX" firstAttribute="centerY" secondItem="ffV-P4-pOA" secondAttribute="centerY" id="Zn4-Yo-hTD"/>
+                                    <constraint firstItem="n0n-cT-LKc" firstAttribute="leading" secondItem="303-Hg-hCI" secondAttribute="leading" constant="16" id="ZvI-LR-eJA"/>
+                                    <constraint firstItem="aKA-8T-kjY" firstAttribute="top" secondItem="X24-Ok-T3R" secondAttribute="bottom" constant="16" id="bck-dV-TsO"/>
+                                    <constraint firstItem="sRI-cF-qHg" firstAttribute="leading" secondItem="ffV-P4-pOA" secondAttribute="trailing" constant="10" id="gJf-tn-ygc"/>
+                                    <constraint firstItem="PUF-Zr-1TX" firstAttribute="leading" secondItem="ffV-P4-pOA" secondAttribute="trailing" constant="-24" id="oet-1A-H1b"/>
+                                    <constraint firstItem="sRI-cF-qHg" firstAttribute="centerX" secondItem="303-Hg-hCI" secondAttribute="centerX" id="owc-EH-ua0"/>
+                                    <constraint firstItem="ffV-P4-pOA" firstAttribute="top" secondItem="X24-Ok-T3R" secondAttribute="bottom" constant="45" id="qj4-hI-MTd"/>
+                                    <constraint firstItem="pUg-pX-cCK" firstAttribute="leading" secondItem="DIo-3e-UKF" secondAttribute="trailing" constant="-25" id="sGH-ay-ppg"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xba-F5-8xX">
+                                <rect key="frame" x="0.0" y="44" width="414" height="459"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Jsm-DS-mgd"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="303-Hg-hCI" firstAttribute="trailing" secondItem="Jsm-DS-mgd" secondAttribute="trailing" id="9bZ-Ms-Ti8"/>
+                            <constraint firstItem="303-Hg-hCI" firstAttribute="leading" secondItem="Jsm-DS-mgd" secondAttribute="leading" id="FkY-9i-NTn"/>
+                            <constraint firstItem="Jsm-DS-mgd" firstAttribute="bottom" secondItem="n0n-cT-LKc" secondAttribute="bottom" constant="40" id="HMI-c4-Oat"/>
+                            <constraint firstItem="303-Hg-hCI" firstAttribute="top" secondItem="xba-F5-8xX" secondAttribute="bottom" constant="8" symbolic="YES" id="Lc1-Dh-yEB"/>
+                            <constraint firstAttribute="bottom" secondItem="303-Hg-hCI" secondAttribute="bottom" constant="-50" id="PFw-QU-ZRz"/>
+                            <constraint firstItem="xba-F5-8xX" firstAttribute="leading" secondItem="Jsm-DS-mgd" secondAttribute="leading" id="UcY-6C-PaM"/>
+                            <constraint firstItem="Jsm-DS-mgd" firstAttribute="trailing" secondItem="xba-F5-8xX" secondAttribute="trailing" id="n0z-uY-fg8"/>
+                            <constraint firstItem="xba-F5-8xX" firstAttribute="top" secondItem="Jsm-DS-mgd" secondAttribute="top" id="uwq-Ma-e8b"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="acceptButton" destination="n0n-cT-LKc" id="bXT-qs-reD"/>
+                        <outlet property="backView" destination="303-Hg-hCI" id="nIz-Ch-VPz"/>
+                        <outlet property="deviderView" destination="aKA-8T-kjY" id="y1f-dR-vTz"/>
+                        <outlet property="leftImageView" destination="PUF-Zr-1TX" id="lAx-fJ-Skx"/>
+                        <outlet property="leftTextField" destination="ffV-P4-pOA" id="wH6-oh-7NK"/>
+                        <outlet property="nameBackView" destination="vom-NC-4ah" id="24Y-Pi-MxG"/>
+                        <outlet property="rightImageView" destination="pUg-pX-cCK" id="xi5-Pn-q10"/>
+                        <outlet property="rigthTextField" destination="DIo-3e-UKF" id="SYa-pP-iu4"/>
+                        <outlet property="spaceView" destination="xba-F5-8xX" id="7X3-01-Asr"/>
+                        <outlet property="titleLabel" destination="X24-Ok-T3R" id="bUm-SS-ukJ"/>
+                        <outlet property="viewBetweenTextField" destination="sRI-cF-qHg" id="PWR-Zh-gVt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hFg-Wb-jdA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="111.59420289855073" y="58.928571428571423"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="calendar" width="16" height="16"/>
+        <namedColor name="SMSBack">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TfBackground">
+            <color red="0.20999999344348907" green="0.31499999761581421" blue="0.41200000047683716" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="ValidationBackgroundSTextF">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

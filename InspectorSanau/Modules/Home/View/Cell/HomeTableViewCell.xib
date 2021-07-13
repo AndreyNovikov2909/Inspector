@@ -41,6 +41,7 @@
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="height" constant="60" id="1jP-rI-g52"/>
                             <constraint firstItem="WoN-6E-KS5" firstAttribute="centerY" secondItem="Ta5-tC-cjN" secondAttribute="centerY" id="7Va-l7-QCK"/>

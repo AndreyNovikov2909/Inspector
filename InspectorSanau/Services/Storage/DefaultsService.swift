@@ -30,6 +30,9 @@ class DefaultsService: DefaultsServicePresebtable {
     static let search_city_key = "search_city"
     static let search_district_key = "search_district"
     static let phase_key = "pahse_key"
+    static let search_state = "search_key"
+    static let discrict_key = "disctrict_key"
+    static let city_key = "city_key"
 
     // MARK: - Methods
     
@@ -101,6 +104,28 @@ class DefaultsService: DefaultsServicePresebtable {
         standart.setValue(nil, forKey: DefaultsService.search_district_key)
     }
     
+    func deleteUser() {
+        standart.setValue(nil, forKey: "email")
+        standart.setValue(nil, forKey: "fullName")
+        standart.setValue(nil, forKey: "phoneNumber")
+        standart.setValue(nil, forKey: "roleName")
+    }
+    
+    func setUser(_ user: UserWrapped) {
+        standart.setValue(user.email ?? "", forKey: "email")
+        standart.setValue(user.fullName ?? "", forKey: "fullName")
+        standart.setValue(user.phoneNumber ?? "", forKey: "phoneNumber")
+        standart.setValue(user.roleName, forKey: "roleName")
+    }
+    
+    func getUser() -> UserWrapped {
+        let email = standart.value(forKey: "email") as? String
+        let fullName = standart.value(forKey: "fullName") as? String
+        let phoneNumber = standart.value(forKey: "phoneNumber") as? String
+        let roleName = standart.value(forKey: "roleName") as? String
+        return UserWrapped(fullName: fullName, email: email, phoneNumber: phoneNumber, roleName: roleName)
+    }
+    
     // phase
     
     func getCurrenctPhase() -> TypeMetterViewModel.TypeMetter {
@@ -114,6 +139,34 @@ class DefaultsService: DefaultsServicePresebtable {
     
     func setPhase(_ value: TypeMetterViewModel.TypeMetter) {
         standart.setValue(value.rawValue, forKey: DefaultsService.phase_key)
+    }
+    
+    func setCurrentSate(_ state: SearchState) {
+        switch state {
+        case .done(let city, let district):
+            standart.setValue("done", forKey: DefaultsService.search_state)
+            setSearchCity(city)
+            setSearchDistric(district)
+        case .city:
+            standart.setValue("city", forKey: DefaultsService.search_state)
+        default: break
+        }
+    }
+    
+    
+    func getCurrentState() -> SearchState {
+        if let value = standart.value(forKey: DefaultsService.search_state) as? String,
+           let city = getCity(),
+           let discrict = getDiscric() {
+            
+            if value == "done" {
+                return .done(city: city, district: discrict)
+            } else {
+                return .city
+            }
+        }
+        
+        return .city
     }
 }
 

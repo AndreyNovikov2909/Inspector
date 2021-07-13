@@ -17,6 +17,9 @@
 		0C0934392627396C0044ED83 /* UIButton + extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0934382627396C0044ED83 /* UIButton + extention.swift */; };
 		0C09343D262739860044ED83 /* UIApplication + extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C09343C262739860044ED83 /* UIApplication + extention.swift */; };
 		0C09344326273B830044ED83 /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C09344226273B830044ED83 /* SettingsViewController.storyboard */; };
+		0C127B69264AA90E0029B2EB /* MainDescriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C127B68264AA90E0029B2EB /* MainDescriptionViewModel.swift */; };
+		0C127B79264BEA3D0029B2EB /* ExportExelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C127B78264BEA3D0029B2EB /* ExportExelViewController.swift */; };
+		0C127B7D264BEA510029B2EB /* ExportExelViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C127B7C264BEA510029B2EB /* ExportExelViewController.storyboard */; };
 		0C16A0582631F00C00173924 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C16A0572631F00C00173924 /* FilterViewController.swift */; };
 		0C16A05B2631F05400173924 /* FilterViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C16A05A2631F05400173924 /* FilterViewController.storyboard */; };
 		0C16A05E2631F10A00173924 /* FIlterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C16A05D2631F10A00173924 /* FIlterViewModel.swift */; };
@@ -137,10 +140,11 @@
 		0CBE03AB2624D43500EA538D /* SearchDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBE03AA2624D43500EA538D /* SearchDeviceViewController.swift */; };
 		0CBE03AE2624D4B000EA538D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBE03AD2624D4B000EA538D /* SettingsViewController.swift */; };
 		0CC4757B262716C000731675 /* ErrorDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC4757A262716C000731675 /* ErrorDescription.swift */; };
-		11093D218EEADA36561AF9F5 /* Pods_InspectorSanau.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8F3C7F4FA534B1CE7B46D58 /* Pods_InspectorSanau.framework */; };
+		6EE526C06D4A447FC18A8A51 /* Pods_InspectorSanau.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64B788197A1101D7B9C521E4 /* Pods_InspectorSanau.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		08A63453E7AC35216B946965 /* Pods-InspectorSanau.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspectorSanau.debug.xcconfig"; path = "Target Support Files/Pods-InspectorSanau/Pods-InspectorSanau.debug.xcconfig"; sourceTree = "<group>"; };
 		0C09341D262722230044ED83 /* SanauAlertController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SanauAlertController.storyboard; sourceTree = "<group>"; };
 		0C093420262722700044ED83 /* SanauAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SanauAlertController.swift; sourceTree = "<group>"; };
 		0C093427262725C70044ED83 /* SingleSanauAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SingleSanauAlert.storyboard; sourceTree = "<group>"; };
@@ -151,6 +155,9 @@
 		0C0934382627396C0044ED83 /* UIButton + extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + extention.swift"; sourceTree = "<group>"; };
 		0C09343C262739860044ED83 /* UIApplication + extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication + extention.swift"; sourceTree = "<group>"; };
 		0C09344226273B830044ED83 /* SettingsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
+		0C127B68264AA90E0029B2EB /* MainDescriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDescriptionViewModel.swift; sourceTree = "<group>"; };
+		0C127B78264BEA3D0029B2EB /* ExportExelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportExelViewController.swift; sourceTree = "<group>"; };
+		0C127B7C264BEA510029B2EB /* ExportExelViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExportExelViewController.storyboard; sourceTree = "<group>"; };
 		0C16A0572631F00C00173924 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		0C16A05A2631F05400173924 /* FilterViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FilterViewController.storyboard; sourceTree = "<group>"; };
 		0C16A05D2631F10A00173924 /* FIlterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIlterViewModel.swift; sourceTree = "<group>"; };
@@ -275,9 +282,8 @@
 		0CBE03AA2624D43500EA538D /* SearchDeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDeviceViewController.swift; sourceTree = "<group>"; };
 		0CBE03AD2624D4B000EA538D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0CC4757A262716C000731675 /* ErrorDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorDescription.swift; sourceTree = "<group>"; };
-		130F5D26D2B5F64F3C3FCD6A /* Pods-InspectorSanau.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspectorSanau.debug.xcconfig"; path = "Target Support Files/Pods-InspectorSanau/Pods-InspectorSanau.debug.xcconfig"; sourceTree = "<group>"; };
-		48D2288BF8D99F24ACA4F07D /* Pods-InspectorSanau.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspectorSanau.release.xcconfig"; path = "Target Support Files/Pods-InspectorSanau/Pods-InspectorSanau.release.xcconfig"; sourceTree = "<group>"; };
-		E8F3C7F4FA534B1CE7B46D58 /* Pods_InspectorSanau.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InspectorSanau.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		64B788197A1101D7B9C521E4 /* Pods_InspectorSanau.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InspectorSanau.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA0B16C11468A7749B39B722 /* Pods-InspectorSanau.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspectorSanau.release.xcconfig"; path = "Target Support Files/Pods-InspectorSanau/Pods-InspectorSanau.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,7 +291,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11093D218EEADA36561AF9F5 /* Pods_InspectorSanau.framework in Frameworks */,
+				6EE526C06D4A447FC18A8A51 /* Pods_InspectorSanau.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +301,7 @@
 		0C09341C262721E10044ED83 /* Alerts */ = {
 			isa = PBXGroup;
 			children = (
+				0C127B74264BE9E40029B2EB /* ExportExel */,
 				0CB8F5DF262DE38E00697E5B /* ErrorAlert */,
 				0C093426262725B00044ED83 /* SingleSanauAlert */,
 				0C0934232627256A0044ED83 /* SanauAlert */,
@@ -326,6 +333,15 @@
 				0C9544332624CF1200DFDB04 /* CGFloat + extention.swift */,
 			);
 			path = "CoreGraphics + extention";
+			sourceTree = "<group>";
+		};
+		0C127B74264BE9E40029B2EB /* ExportExel */ = {
+			isa = PBXGroup;
+			children = (
+				0C127B78264BEA3D0029B2EB /* ExportExelViewController.swift */,
+				0C127B7C264BEA510029B2EB /* ExportExelViewController.storyboard */,
+			);
+			path = ExportExel;
 			sourceTree = "<group>";
 		};
 		0C16A0532631EFD900173924 /* Filter */ = {
@@ -741,7 +757,7 @@
 				0C9543BA2624BAF900DFDB04 /* InspectorSanau */,
 				0C9543B92624BAF900DFDB04 /* Products */,
 				E9FD9C7005C2361F4A70B383 /* Pods */,
-				1F259054CEF381F413292E90 /* Frameworks */,
+				29CAF84239512D95B06427A0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -988,6 +1004,7 @@
 		0CB1F1B5262CC28F00BEC968 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				0C127B68264AA90E0029B2EB /* MainDescriptionViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1117,16 +1134,16 @@
 		0CBE03A52624D3CF00EA538D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				0C3CBBE3262EF72600238FBA /* HomeViewViewModel.swift */,
 				0C3CBBE6262EF89E00238FBA /* HomeWrapped.swift */,
+				0C3CBBE3262EF72600238FBA /* HomeViewViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		1F259054CEF381F413292E90 /* Frameworks */ = {
+		29CAF84239512D95B06427A0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E8F3C7F4FA534B1CE7B46D58 /* Pods_InspectorSanau.framework */,
+				64B788197A1101D7B9C521E4 /* Pods_InspectorSanau.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1134,8 +1151,8 @@
 		E9FD9C7005C2361F4A70B383 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				130F5D26D2B5F64F3C3FCD6A /* Pods-InspectorSanau.debug.xcconfig */,
-				48D2288BF8D99F24ACA4F07D /* Pods-InspectorSanau.release.xcconfig */,
+				08A63453E7AC35216B946965 /* Pods-InspectorSanau.debug.xcconfig */,
+				DA0B16C11468A7749B39B722 /* Pods-InspectorSanau.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1147,11 +1164,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0C9543CC2624BAFB00DFDB04 /* Build configuration list for PBXNativeTarget "InspectorSanau" */;
 			buildPhases = (
-				745293F4AAF0AC89F4E30A47 /* [CP] Check Pods Manifest.lock */,
+				C52C0911934E7058D372184E /* [CP] Check Pods Manifest.lock */,
 				0C9543B42624BAF900DFDB04 /* Sources */,
 				0C9543B52624BAF900DFDB04 /* Frameworks */,
 				0C9543B62624BAF900DFDB04 /* Resources */,
-				C05996E11AFD5ED5147C6717 /* [CP] Embed Pods Frameworks */,
+				BC01341995759F671892684A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1212,6 +1229,7 @@
 				0C91E0622632E62900367F23 /* TypeMetterTableViewCell.xib in Resources */,
 				0C16A0692631F38900173924 /* FilterTableViewCell.xib in Resources */,
 				0C09344326273B830044ED83 /* SettingsViewController.storyboard in Resources */,
+				0C127B7D264BEA510029B2EB /* ExportExelViewController.storyboard in Resources */,
 				0CB1F1A6262CC0A600BEC968 /* DescriptionViewController.storyboard in Resources */,
 				0CAB2F08262889CB00A244EF /* ChangePasswordViewController.storyboard in Resources */,
 				0C67E0D0262F30970005B2E1 /* HomeBluetoothTableViewCell.xib in Resources */,
@@ -1229,7 +1247,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		745293F4AAF0AC89F4E30A47 /* [CP] Check Pods Manifest.lock */ = {
+		BC01341995759F671892684A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InspectorSanau/Pods-InspectorSanau-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InspectorSanau/Pods-InspectorSanau-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InspectorSanau/Pods-InspectorSanau-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C52C0911934E7058D372184E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1249,23 +1284,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C05996E11AFD5ED5147C6717 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-InspectorSanau/Pods-InspectorSanau-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-InspectorSanau/Pods-InspectorSanau-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InspectorSanau/Pods-InspectorSanau-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1298,6 +1316,7 @@
 				0C2F73F02625C63900AE921E /* HTTPRouter.swift in Sources */,
 				0C91E0532632D9E100367F23 /* TypeMetterViewModel.swift in Sources */,
 				0C9544122624CD5400DFDB04 /* GraphView.swift in Sources */,
+				0C127B69264AA90E0029B2EB /* MainDescriptionViewModel.swift in Sources */,
 				0CB1F1F1262DA1EF00BEC968 /* ElectrinicMetterTableViewCell.swift in Sources */,
 				0C093430262735B10044ED83 /* UIViewController + extention.swift in Sources */,
 				0C2F73DA2625C5A100AE921E /* BluetoothManager.swift in Sources */,
@@ -1314,6 +1333,7 @@
 				0C65BB1E262EC80A00A653AF /* DescriptionViewModel.swift in Sources */,
 				0C2F73DE2625C5AB00AE921E /* KeyboardService.swift in Sources */,
 				0CAB2F0E26288A0200A244EF /* ChangePasswordCoordinator.swift in Sources */,
+				0C127B79264BEA3D0029B2EB /* ExportExelViewController.swift in Sources */,
 				0C3CBBE4262EF72600238FBA /* HomeViewViewModel.swift in Sources */,
 				0CBE03A72624D3DD00EA538D /* HomeViewController.swift in Sources */,
 				0C9543BC2624BAF900DFDB04 /* AppDelegate.swift in Sources */,
@@ -1505,12 +1525,12 @@
 		};
 		0C9543CD2624BAFB00DFDB04 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 130F5D26D2B5F64F3C3FCD6A /* Pods-InspectorSanau.debug.xcconfig */;
+			baseConfigurationReference = 08A63453E7AC35216B946965 /* Pods-InspectorSanau.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C7L2AL6Q55;
+				DEVELOPMENT_TEAM = RMCLA9UCQ7;
 				INFOPLIST_FILE = InspectorSanau/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1526,12 +1546,12 @@
 		};
 		0C9543CE2624BAFB00DFDB04 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 48D2288BF8D99F24ACA4F07D /* Pods-InspectorSanau.release.xcconfig */;
+			baseConfigurationReference = DA0B16C11468A7749B39B722 /* Pods-InspectorSanau.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C7L2AL6Q55;
+				DEVELOPMENT_TEAM = RMCLA9UCQ7;
 				INFOPLIST_FILE = InspectorSanau/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -20,14 +20,26 @@ struct GraphPresentableModel: GraphPresentable {
 
 class GraphView: UIView {
 
-    var writeComplition: (() -> Void)?
+//    var writeComplition: (() -> Void)?
    
     // MARK: - External properties
     
     private var views = [UIView]()
+    private var pres =  [GraphPresentable]()
     
     var data: [GraphPresentable] = [] {
         didSet {
+            self.pres = data
+            data = data.filter({ value in
+                
+                return value.date.getDayFromDate() == value.date.getDayFromToday()
+            })
+        
+            
+            if !pres.contains(where: { $0.date.getDayFromDate() == $0.date.getDayFromToday() }) && pres.count > 1 {
+                data.append(pres[0])
+            }
+            
             update()
         }
     }
@@ -53,14 +65,14 @@ class GraphView: UIView {
         
         setupConstraintsForCollectionView()
         
-        writeComplition = {
-            var newValue = self.data
-            newValue.append(GraphPresentableModel(value: CGFloat.random(in: 300...500), date: "\(Int.random(in: 1...12)).\(Int.random(in: 1...30))"))
-            self.data = newValue
-            if newValue.count % 8 == 0 {
-                self.scrollToMaxX(withAnimation: true)
-            }
-        }
+//        writeComplition = {
+//            var newValue = self.data
+//            newValue.append(GraphPresentableModel(value: CGFloat.random(in: 300...500), date: "\(Int.random(in: 1...12)).\(Int.random(in: 1...30))"))
+//            self.data = newValue
+//            if newValue.count % 8 == 0 {
+//                self.scrollToMaxX(withAnimation: true)
+//            }
+//        }
     }
     
     required init?(coder: NSCoder) {
@@ -119,6 +131,34 @@ class GraphView: UIView {
         } else {
             self.scrollView.contentOffset.x = position
         }
+    }
+}
+
+
+
+extension String {
+    func getDayFromDate() -> Int {
+        let today = Date()
+        let calndar = Calendar.current
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/YYYY HH:mm"
+       
+        if let date = dateFormatter.date(from: self) {
+            let todayDay = calndar.component(.day, from: today)
+            let fromDay = calndar.component(.day, from: date)
+            
+            return fromDay
+        }
+        
+        return 0
+    }
+    
+    func getDayFromToday() -> Int {
+        let today = Date()
+        let calndar = Calendar.current
+        let todayDay = calndar.component(.day, from: today)
+        
+       return todayDay
     }
 }
 

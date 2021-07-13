@@ -10,7 +10,7 @@ import RxCocoa
 import RxSwift
 
 protocol SettingsViewModelPresentable {
-    typealias Input = (selectedType: Driver<SettingsViewModel.SettingsType>, logout: Driver<Void>)
+    typealias Input = (selectedType: Driver<SettingsViewModel.SettingsType>, logout: Driver<Void>, viewDidload: Driver<Void>)
     typealias Output = (settings: [SettingsViewModel.SettingsType], user: Driver<UserPresentable>)
     typealias Builder = (Input) -> SettingsViewModelPresentable
     typealias RouterAction = (changePassword: PublishRelay<Void>, ())
@@ -66,17 +66,24 @@ final class SettingsViewModel: SettingsViewModelPresentable {
                                                user: user)
         
         requestUser()
-        getUser()
         selectedItem()
+       getProcess()
     }
 }
 
 // MARK: - Proccess
 
 private extension SettingsViewModel {
+    
+    func getProcess() {
+        input.viewDidload.asObservable().subscribe { (_) in
+//            self.getUser()
+        }.disposed(by: dispose)
+    }
+    
     func requestUser() {
         do {
-            let single: Single<UserWrapped> = try httpManager.decodableRequest(request: ApplicationRouter.login(param: [:]).asURLRequest())
+            let single: Single<UserWrapped> = try httpManager.decodableRequest(request: ApplicationRouter.getOperatorProfile(params: [:]).asURLRequest())
             
             single.asObservable().subscribe { event in
                 switch event {
@@ -95,28 +102,28 @@ private extension SettingsViewModel {
     }
     
     func saveUser(_ userWrapped: UserWrapped) {
-        let userObject = User()
-        userObject.firstName = userWrapped.firstName
-        userObject.middleName = userWrapped.middleName
-        userObject.lastName = userWrapped.lastName
-        userObject.email = userWrapped.email
-        userObject.phoneNumber = userWrapped.phoneNumber
-        userObject.id = userWrapped.id
+        guard userWrapped.email != nil else { return }
         
-        try? realmService.removeAlll()
-        try? realmService.saveObject(value: userObject)
+        DefaultsService.shared.setUser(userWrapped)
         
+//        let userObject = User()
+//
+//        userObject.fullName = userWrapped.fullName
+//        userObject.email = userWrapped.email
+//        userObject.phoneNumber = userWrapped.phoneNumber
+//        userObject.roleName = userWrapped.roleName
+//
+//        try? realmService.saveObject(value: userObject)
         self.user.accept(userWrapped)
     }
     
     func getUser() {
-        if let savedUser: User = realmService.getObjects().first {
-            let userWrapped = UserWrapped(firstName: savedUser.firstName,
-                                          middleName: savedUser.middleName,
-                                          lastName: savedUser.lastName,
-                                          phoneNumber: savedUser.phoneNumber,
+        if let savedUser: User = realmService.getObjects().last {
+            let userWrapped = UserWrapped(fullName: savedUser.fullName,
                                           email: savedUser.email,
-                                          id: savedUser.id)
+                                          phoneNumber: savedUser.phoneNumber,
+                                          roleName: savedUser.roleName)
+            
             user.accept(userWrapped)
         }
     }

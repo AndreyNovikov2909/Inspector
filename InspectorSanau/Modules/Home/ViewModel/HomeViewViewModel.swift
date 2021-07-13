@@ -16,10 +16,19 @@ enum SearchState {
 }
 
 protocol HomeViewViewModelPresentable {
-    typealias Input = (selectedItem: Driver<HomeDetailWrapped>, showFilter: Driver<Void>)
-    typealias Output = (homeItems: Driver<HomeWrapped>, searchState: SearchState)
-    typealias RouterAction = (selectedItem: PublishRelay<HomeDetailWrapped>, filterTap: PublishRelay<Void>)
-    typealias Routing = (showDetail: Driver<HomeDetailWrapped>, showFilter: Driver<Void>)
+    typealias Input = (selectedItem: Driver<HomeDetailWrapped>,
+                       showFilter: Driver<Void>,
+                       searchText: Driver<String>,
+                       searchTextRemoveText: Driver<Void>,
+                       getNextBatch: Driver<Void>,
+                       removeButton: Driver<Void>)
+    typealias Output = (homeItems: Driver<HomeWrapped>,
+                        searchState: SearchState,
+                        removeAll: Driver<Void>)
+    typealias RouterAction = (selectedItem: PublishRelay<HomeDetailWrapped>,
+                              filterTap: PublishRelay<Void>,
+                              error: PublishRelay<Error>)
+    typealias Routing = (showDetail: Driver<HomeDetailWrapped>, showFilter: Driver<Void>, showError: Driver<Error>)
     typealias Builder = (Input) -> HomeViewViewModelPresentable
     
     var input: Input { get set }
@@ -34,26 +43,36 @@ final class HomeViewViewModel: HomeViewViewModelPresentable {
     var input: Input
     var output: Output
     lazy var routing: Routing = (showDetail: routerAction.selectedItem.asDriver(onErrorDriveWith: .never()),
-                                 showFilter: routerAction.filterTap.asDriver(onErrorDriveWith: .never()))
+                                 showFilter: routerAction.filterTap.asDriver(onErrorDriveWith: .never()),
+                                 showError: routerAction.error.asDriver(onErrorDriveWith: .never()))
     
     // MARK: - Private properties
     
     private let routerAction: RouterAction = (selectedItem: PublishRelay<HomeDetailWrapped>(),
-                                              filterTap: PublishRelay<Void>())
+                                              filterTap: PublishRelay<Void>(),
+                                              error: PublishRelay<Error>())
     private let dispose = DisposeBag()
     private let state: SearchState
     private let homeItems = BehaviorRelay<HomeWrapped>.init(value: .init(homeItems: []))
+    private let removeAll = PublishRelay<Void>.init()
     
     // MARK: - Services
     
-    private let httpService: HTTPService
+    private let httpService: HTTPManager
     private let realmService: RealmService
+    
+    private var currentBatch: Metterresponse?
+    private var currrentFiltringBatch: Metterresponse?
+    
+    private var currentPage = 0
+    private var currentFiltringPage = 0
+    private var isFiltring = false
     
     // MARK: - Init
     
-    init(input: Input, httpService: HTTPService, realmService: RealmService, state: SearchState) {
+    init(input: Input, httpService: HTTPManager, realmService: RealmService, state: SearchState) {
         self.input = input
-        self.output = HomeViewViewModel.output(input: input, homeItems: homeItems, searchState: state)
+        self.output = HomeViewViewModel.output(input: input, homeItems: homeItems, searchState: state, removeAll: removeAll)
         self.state = state
         
         self.httpService = httpService
@@ -78,12 +97,15 @@ final class HomeViewViewModel: HomeViewViewModelPresentable {
                 .init(title: "Кокшетау")
             ]))
         case .done:
-            let arr = [HomeDetailWrapped].init(repeating: .init(originalName: "CJ\(Int.random(in: 10000...99999))", ownerName: "Фамилия Имя Отчество"), count: Int.random(in: 1000...3000))
-            homeItems.accept(HomeWrapped.init(homeItems: arr))
+
+            getNextBatch(atPage: currentPage)
         }
         
         selectedProcess()
         showFilterProcess()
+        getNextBatchProcess()
+        searchTextProcess()
+        DefaultsService.shared.setCurrentSate(state)
     }
 }
 
@@ -91,6 +113,106 @@ final class HomeViewViewModel: HomeViewViewModelPresentable {
 // MARK: - Process
 
 private extension HomeViewViewModel {
+    
+    func searchTextProcess() {
+        input.searchText.debounce(DispatchTimeInterval.milliseconds(33)).asObservable().subscribe { (event) in
+            guard let text = event.element else { return }
+            self.currrentFiltringBatch = nil
+            self.currentFiltringPage = 0
+            
+            self.currentPage = 0
+            self.currentBatch = nil
+            self.removeAll.accept(Void())
+            
+            if text.isEmpty && text.trimmingCharacters(in: .whitespaces).isEmpty {
+                self.getNextBatch(atPage: 0)
+                self.isFiltring = false
+            } else {
+                self.getNextbatchFilter(query: text, page: 0)
+                self.isFiltring = true
+            }
+        }.disposed(by: dispose)
+    }
+    
+    // filtring
+    
+    func getNextbatchFilter(query: String, page: Int) {
+        let params: [String: Any] = ["query": query, "sortBy": "asc", "page": "\(page)", "size": "50"]
+        do {
+            let value: Single<Metterresponse> = try httpService.decodableRequest(request: ApplicationRouter.getMattersFromName(params).asURLRequest())
+            value.subscribeOn(MainScheduler.instance).asObservable().subscribe { (event) in
+                switch event {
+                case .next(let result):
+                    let homeDetalWrapped: [HomeDetailWrapped] = result.data.map { HomeDetailWrapped(originalName: $0.serialNumber, ownerName: $0.fullName) }
+                    let homeWrapped = HomeWrapped(count: homeDetalWrapped.count, homeItems: homeDetalWrapped)
+                    self.homeItems.accept(homeWrapped)
+                    
+                    self.currrentFiltringBatch = result
+                    self.currentFiltringPage += 1
+                    
+                    self.currentPage = 0
+                    self.currentBatch = nil
+                    
+                case .error(let error):
+                    self.routerAction.error.accept(error)
+                case .completed:
+                    break
+                }
+            }.disposed(by: dispose)
+        } catch {
+            self.routerAction.error.accept(error)
+        }
+    }
+    
+    // get all
+    
+    func getNextBatchProcess() {
+        input.getNextBatch.asObservable().subscribe { (event) in
+            guard let _ = event.element else { return }
+            self.nextBatch()
+        }.disposed(by: dispose)
+    }
+    
+    func nextBatch() {
+        if isFiltring {
+            if let currentBatch = currentBatch, currentPage < currentBatch.totalPage {
+                getNextBatch(atPage: currentPage)
+            } else {
+                getNextBatch(atPage: 0)
+            }
+        } else {
+            if let currrentFiltringBatch = currrentFiltringBatch, currentFiltringPage < currrentFiltringBatch.totalPage {
+                getNextBatch(atPage: currentFiltringPage)
+            } else {
+                getNextBatch(atPage: 0)
+            }
+        }
+    }
+    
+    func getNextBatch(atPage page: Int) {
+        let params: [String: Any] = ["sortBy": "asc", "page": "\(page)", "size": "50"]
+
+        do {
+            let value: Single<Metterresponse> = try httpService.decodableRequest(request: ApplicationRouter.getAllMetters(params).asURLRequest())
+            value.subscribeOn(MainScheduler.instance).asObservable().subscribe { (event) in
+                switch event {
+                case .next(let result):
+                    let homeDetalWrapped: [HomeDetailWrapped] = result.data.map { HomeDetailWrapped(originalName: $0.serialNumber, ownerName: $0.fullName) }
+                    let homeWrapped = HomeWrapped(count: homeDetalWrapped.count, homeItems: homeDetalWrapped)
+                    self.homeItems.accept(homeWrapped)
+                    self.currentBatch = result
+                    self.currentPage += 1
+                case .error(let error):
+                    self.routerAction.error.accept(error)
+                case .completed:
+                    break
+                }
+            }.disposed(by: dispose)
+        } catch {
+            self.routerAction.error.accept(error)
+        }
+    }
+    
     func selectedProcess() {
         input.selectedItem.asObservable().subscribe { [weak self] (event) in
             guard let self = self else { return }
@@ -114,7 +236,10 @@ private extension HomeViewViewModel {
 private extension HomeViewViewModel {
     static func output(input: HomeViewViewModelPresentable.Input,
                        homeItems: BehaviorRelay<HomeWrapped>,
-                       searchState: SearchState) -> HomeViewViewModelPresentable.Output {
-        (homeItems: homeItems.asDriver(), searchState: searchState)
+                       searchState: SearchState,
+                       removeAll: PublishRelay<Void>) -> HomeViewViewModelPresentable.Output {
+        (homeItems: homeItems.asDriver(),
+         searchState: searchState,
+         removeAll: removeAll.asDriver(onErrorDriveWith: .never()))
     }
 }

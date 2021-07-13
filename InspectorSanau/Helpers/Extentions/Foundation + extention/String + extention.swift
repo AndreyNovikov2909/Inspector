@@ -93,6 +93,8 @@ extension String {
         var result = [UInt8]()
         let const: UInt8 = 51
         
+    
+        
         if byteArray.count > 6 {
             newArr.removeLast()
             newArr.removeLast()
@@ -101,31 +103,64 @@ extension String {
             
             result.append(byteArray[count - 6])
             result.append(byteArray[count - 5])
+            
             result.append(byteArray[count - 4])
             result.append(byteArray[count - 3])
         }
         
-        let hexadecimalArray = result
-       
-        for b in hexadecimalArray.reversed() {
-            let value =  b.hex - const.hex
-            print("D:", value)
-            /// last symbol
-            if hexadecimalArray[0] == b {
-                resString.append(".")
-            }
-            
+     
+        for (i, b) in result.reversed().enumerated() {
+            let value = b.hex - const.hex
             resString.append(value.stringValue)
             
-            
-        }
-        
-        for _ in hexadecimalArray {
-            if resString.hasPrefix("0") || resString.hasPrefix(".")  {
-                resString.removeFirst()
+            if i == (result.count - 2) {
+                resString.append(".")
             }
         }
+        
+        print(resString)
+        
+//        for value in result {
+//            print(value.hex)
+//        }
+//
+//        let hexadecimalArray = result
+//
+//
+//        for (i, b) in hexadecimalArray.reversed().enumerated() {
+//            let value = b.hex - const.hex
+//            print("D:", value)
+//            /// last symbol
+//            if hexadecimalArray[0] == b {
+//                resString.append(".")
+//            }
+//
+//
+//            if i == 0 {
+//                print(value)
+//                continue
+//            }
+//
+//            if value < UInt8(16).hex && (i == 1 || i == 3)  {
+//                if i == 3 {
+//                    resString.append("0" + value.stringValue )
+//                } else {
+//                    print(i, value)
+//                    resString.append(value.stringValue + "0")
+//                }
+//            }  else {
+//                resString.append(value.stringValue)
+//            }
+//        }
+//
+//
+//        for _ in hexadecimalArray {
+//            if resString.hasPrefix("0") || resString.hasPrefix(".")  {
+//                resString.removeFirst()
+//            }
+//        }
 
+        
         return resString
     }
 }

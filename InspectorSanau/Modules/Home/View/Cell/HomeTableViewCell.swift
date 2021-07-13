@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol HomeTableViewCellDelegate: class {
+    func homeTableViewCellDidTap(_ homeTableViewCell: HomeTableViewCell)
+}
+
 protocol HomeCellPresentable {
     var title: String { get set }
 }
@@ -16,6 +20,7 @@ class HomeTableViewCell: UITableViewCell {
     // MARK: - External properties
     
     static let reuseID = "HomeTableViewCell"
+    weak var meDelegate: HomeTableViewCellDelegate?
     
     // MARK: - IBOutlets
     
@@ -29,7 +34,14 @@ class HomeTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         setupUI()
+        
+        backView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
     }
+    
+    @objc private func handleTap() {
+        meDelegate?.homeTableViewCellDidTap(self)
+    }
+
     
     // MARK: - Instance methods
     

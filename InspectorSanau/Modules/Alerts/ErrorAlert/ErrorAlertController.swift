@@ -35,7 +35,7 @@ class ErrorAlertController: UIViewController {
         } completion: { (_) in
             
             UIView.animate(withDuration: 0.5,
-                           delay: 3,
+                           delay: 1.5,
                            usingSpringWithDamping: 0.8,
                            initialSpringVelocity: 0.8,
                            options: .curveEaseInOut) {

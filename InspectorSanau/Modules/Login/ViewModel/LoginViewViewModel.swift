@@ -113,9 +113,11 @@ final class LoginViewViewModel: LoginViewViewModelPresentable {
             case .next(let element):
                 if let accessToken = element.accessToken, let refreshToken = element.refreshToken {
                     
+                    DefaultsService.shared.setAuth(value: true)
                     self.accessToken = accessToken
                     self.refreshObservable = refreshToken
                     self.routerAction.loginSuccess.accept(Void())
+                    
                     
                 } else {
                     let error = ErrorDescription(description: element.message ?? "")
@@ -137,7 +139,7 @@ private extension LoginViewViewModel {
                        validator: ValidationProtocol) -> LoginViewViewModelPresentable.Output {
         
         let buttonIsEnable = Driver<Bool>.combineLatest(input.email, input.password) { (email, password) in
-            return validator.nameIsvalid(name: email) && validator.passwordIsValid(password: password)
+            return (email.count > 2) && validator.passwordIsValid(password: password)
         }
         
         let phoneTextFieldBackgroundColor = input.email

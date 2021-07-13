@@ -15,15 +15,16 @@ class DescriptionCoordinator: BaseCoodinator {
     }
     
     private let descriptionViewControlller: DescriptionViewController
+    private let bluetoothId: String
     
-    
-    override init() {
+    init(bluetoothId: String) {
         self.descriptionViewControlller = UIStoryboard.loadViewController()
+        self.bluetoothId = bluetoothId
     }
     
     override func start() {
         descriptionViewControlller.builder = { input in
-            let viewModel = DescriptionViewModel(input: input, realmService: try! RealmService(), httpService: HTTPManager())
+            let viewModel = DescriptionViewModel(input: input, realmService: try! RealmService(), httpService: HTTPManager(), id: self.bluetoothId)
             return viewModel
         }
     }

@@ -13,11 +13,14 @@ struct HomeWrapped  {
     var homeItems: [HomeDetailWrapped]
 }
 
-struct HomeDetailWrapped: HomeCellPresentable, HomeBluetoothCellPresentable {
+struct HomeDetailWrapped: HomeCellPresentable, HomeBluetoothCellPresentable, Decodable, Hashable {
     var title: String
-    
     var originalName: String
     var ownerName: String
+    
+    var city: String?
+    var distric: String?
+    var bluetoothId: String?
     
     init(title: String) {
         self.title = title

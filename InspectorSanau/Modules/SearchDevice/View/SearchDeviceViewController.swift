@@ -30,7 +30,7 @@ class SearchDeviceViewController: UIViewController {
 
     
     // MARK: - Object livecycle
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,6 +42,7 @@ class SearchDeviceViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavigationController()
+        tableView.reloadData()
     }
 }
 

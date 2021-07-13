@@ -55,18 +55,20 @@ class SettingsViewController: UIViewController {
 private extension SettingsViewController {
     func setupViewModel() {
         let input = (selectedType: selectedType.asDriver(onErrorDriveWith: .empty()),
-                     logout: logoutButton.rx.tap.asDriver())
+                     logout: logoutButton.rx.tap.asDriver(),
+                     viewDidload: rx.viewWillAppear.asDriver().map({ _ in return Void() }))
         viewModel = builder(input)
     }
     
     func setupBinding() {
         viewModel.output.user.asObservable().subscribe { [weak self] (event) in
+            
             guard let self = self else { return }
             if let element = event.element {
-                self.fullNameLabel.text = "\(element.middleName) \(element.firstName) \(element.lastName)"
-                self.professionLabel.text = "Оператор"
-                self.phoneNumberLabel.text = element.phoneNumber
-                self.emailLabel.text = element.email
+                self.fullNameLabel.text = element.fullName ?? ""
+                self.professionLabel.text = element.roleName ?? ""
+                self.phoneNumberLabel.text = element.phoneNumber ?? ""
+                self.emailLabel.text = element.email ?? ""
             }
         }.disposed(by: dispose)
     }
@@ -99,10 +101,13 @@ private extension SettingsViewController {
         phoneNumberLabel.textColor = UIColor(named: "descriptionTitles")
         emailLabel.textColor = UIColor(named: "descriptionTitles")
         
-//        fullNameLabel.text = ""
-//        professionLabel.text = ""
-//        phoneNumberLabel.text = ""
-//        emailLabel.text = ""
+        
+        let user = DefaultsService.shared.getUser()
+        
+        fullNameLabel.text = user.fullName ?? ""
+        professionLabel.text = user.roleName ?? ""
+        phoneNumberLabel.text = user.phoneNumber
+        emailLabel.text = user.email ?? ""
     }
     
     func setupTableView() {

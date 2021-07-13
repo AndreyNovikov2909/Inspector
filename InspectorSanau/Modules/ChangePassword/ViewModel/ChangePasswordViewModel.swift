@@ -96,10 +96,12 @@ final class ChangePasswordViewModel: ChangePasswordViewModelPresentable {
 
 private extension ChangePasswordViewModel {
     func changePasswordProcess() {
-        input.changePasswordTap.withLatestFrom(input.firstPassword).asObservable().subscribe { (event) in
+        let passwordCombine = Driver.combineLatest(input.firstPassword, input.secondPassword)
+        
+        input.changePasswordTap.withLatestFrom(passwordCombine).asObservable().subscribe { (event) in
             guard let password = event.element else { return }
 
-            self.changePassword(password: password)
+            self.changePassword(oldPassword: password.0, newPassword: password.1)
         }.disposed(by: disposeBag)
     }
 
@@ -110,10 +112,11 @@ private extension ChangePasswordViewModel {
         }.disposed(by: disposeBag)
     }
 
-    func changePassword(password: String) {
-        let params = [password: password]
+    func changePassword(oldPassword: String, newPassword: String) {
+        let params = ["oldPassword": oldPassword,
+                      "newPassword": newPassword]
 
-        guard let result: Single<AuthResponse> = try? httpManager.request(request: ApplicationRouter.login(param: params).asURLRequest()) else {
+        guard let result: Single<AuthResponse> = try? httpManager.request(request: ApplicationRouter.putNewPassword(params: params).asURLRequest()) else {
             self.routerAction.error.accept(HTTPError.requestIsNil)
             return
         }
@@ -122,7 +125,7 @@ private extension ChangePasswordViewModel {
             guard let self = self else { return }
             switch event {
             case .next(let element):
-                if let status = element.status, status == 200 {
+                if element.status == nil {
                     self.routerAction.changePasswordSuccess.accept(Void())
                 } else {
                     let error = NSError(domain: element.message ?? "", code: element.status ?? -1, userInfo: [:])
@@ -144,7 +147,7 @@ private extension ChangePasswordViewModel {
         
         let buttonIsEnable = Driver<Bool>.combineLatest(input.firstPassword, input.secondPassword) { (firstPassword, secondPassword) in
             print(firstPassword, secondPassword)
-            return validator.passwordIsValid(password: firstPassword) && validator.passwordIsValid(password: secondPassword) && firstPassword == secondPassword
+            return validator.passwordIsValid(password: firstPassword) && validator.passwordIsValid(password: secondPassword)
         }
         
         let firstPasswordTextFiledBackgroundColor = input.firstPassword

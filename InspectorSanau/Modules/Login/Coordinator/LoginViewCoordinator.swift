@@ -76,7 +76,6 @@ private extension LoginViewCoordinator {
     
     func showMainTab() {
         let homeTabCoordinator = HomeTabCoordinator(navigationController: navigationController)
-        DefaultsService.shared.setAuth(value: true)
         add(homeTabCoordinator)
         homeTabCoordinator.start()
     }

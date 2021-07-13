@@ -23,7 +23,6 @@ class SearchDeviceCoordinator: BaseCoodinator {
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         self.searchDeviceViewController = UIStoryboard.loadViewController()
-        
     }
     
     override func start() {
@@ -49,7 +48,7 @@ class SearchDeviceCoordinator: BaseCoodinator {
 
 private extension SearchDeviceCoordinator {
     func showCounterDetail(item: BluetoothWapped) {
-        let mainDescriptionCoordinator = MainDescriptionCoordinator(navigationController: navigationController, item: item)
+        let mainDescriptionCoordinator = MainDescriptionCoordinator(navigationController: navigationController, item: item, bluetoothId: item.name)
         mainDescriptionCoordinator.start()
         print(item)
         add(mainDescriptionCoordinator)

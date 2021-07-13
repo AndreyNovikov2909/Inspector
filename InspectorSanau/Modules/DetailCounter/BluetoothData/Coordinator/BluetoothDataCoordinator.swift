@@ -21,10 +21,12 @@ class BluetoothDataCoordinator: BaseCoodinator {
     private let bluetoothDataViewController: BluetoothDataViewController
     private let item: BluetoothWapped
     private let realmSercice =  try! RealmService()
+    private let id: String
     
-    init(item: BluetoothWapped) {
+    init(item: BluetoothWapped, id: String) {
         bluetoothDataViewController = UIStoryboard.loadViewController()
         self.item = item
+        self.id = id
     }
     
     override func start() {
@@ -33,7 +35,8 @@ class BluetoothDataCoordinator: BaseCoodinator {
             let viewModel = BluetoothDataViewModel(input: input,
                                                    httpManager: HTTPManager(),
                                                    realmSercice: self.realmSercice,
-                                                   deviceObject: self.getDeviceObject())
+                                                   deviceObject: self.getDeviceObject(),
+                                                   id: self.id)
             viewModel
                 .routing
                 .showErrorAlert

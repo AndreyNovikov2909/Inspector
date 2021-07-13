@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (5.4.2)
+  - Alamofire (5.4.3)
   - Differentiator (4.0.1)
   - Realm (4.4.1):
     - Realm/Headers (= 4.4.1)
@@ -44,7 +44,7 @@ SPEC REPOS:
     - SwiftRadix
 
 SPEC CHECKSUMS:
-  Alamofire: bfbc4c2fe5909b1d94fb4ef2277c6b3727ef5dae
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   Realm: 4eb04d7487bd43c0581256f40b424eafb711deff
   RealmSwift: 3eb8924ff7100df5928c7602f71d0fec51e7c9c5
@@ -55,6 +55,6 @@ SPEC CHECKSUMS:
   RxViewController: 7330a46e5c31cd680db169da4c9fc8676e975a81
   SwiftRadix: a81388c8f6b76cec240cb34027cf2dcf4ebdb6ac
 
-PODFILE CHECKSUM: 254b19555be7abb1b6f1cd47cd6bccd4afb1c182
+PODFILE CHECKSUM: ad5b6656d1c66226e4146bf5a24c0dc92b9e26d1
 
 COCOAPODS: 1.10.1

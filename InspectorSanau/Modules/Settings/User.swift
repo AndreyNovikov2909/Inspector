@@ -10,10 +10,9 @@ import RealmSwift
 
 
 class User: Object {
-    @objc var firstName: String = ""
-    @objc var middleName: String = ""
-    @objc var lastName: String = ""
-    @objc var phoneNumber: String = ""
-    @objc var email: String = ""
-    @objc var id: Double = 0
+    @objc var fullName: String?
+    @objc var email: String?
+    @objc var phoneNumber: String?
+    @objc var roleName: String?
+    @objc var date = Date()
 }

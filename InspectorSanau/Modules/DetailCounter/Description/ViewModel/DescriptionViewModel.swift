@@ -37,22 +37,14 @@ final class DescriptionViewModel: DescriptionViewModelPresentable {
     
     // MARK: - Init
     
-    init(input: Input, realmService: RealmService, httpService: HTTPManager) {
+    init(input: Input, realmService: RealmService, httpService: HTTPManager, id: String) {
         self.input = input
         self.output = DescriptionViewModel.output(input: input, description: description)
         
         self.httpService = httpService
         self.realmService = realmService
         
-        description.accept([
-            .init(leftTitle: "Серийный номер", rightTitle: "C7J1236"),
-            .init(leftTitle: "Лицевой счет", rightTitle: "1234567"),
-            .init(leftTitle: "Владелец", rightTitle: "Фамилия Имя Отчетство"),
-            .init(leftTitle: "Адрес", rightTitle: "Город, Такой р-он,  мкр. Такой, ул. Такая, д.54, кв.8 "),
-            .init(leftTitle: "Дата добавления", rightTitle: "18.12.2017"),
-            .init(leftTitle: "Последняя активность", rightTitle: "18.03.2021, 15:12"),
-            .init(leftTitle: "Вид", rightTitle: "Однофазный")
-        ])
+        userInfoRequest(serialNumber: id)
     }
 }
 
@@ -60,7 +52,28 @@ final class DescriptionViewModel: DescriptionViewModelPresentable {
 // MARK: - Process
 
 private extension DescriptionViewModel {
-    
+    func userInfoRequest(serialNumber: String) {
+        let params = ["serialNumber": serialNumber]
+        do {
+            let result: Single<UserWrrapped> = try httpService.decodableRequest(request: ApplicationRouter.getBluetoothHumanData(params).asURLRequest())
+            
+            result.asObservable().subscribe { (event) in
+                if let value = event.element {
+                    self.description.accept([
+                        .init(leftTitle: "Серийный номер", rightTitle: value.serialNumber ?? ""),
+                        .init(leftTitle: "Лицевой счет", rightTitle: value.personalAccountNumber ?? ""),
+                        .init(leftTitle: "Владелец", rightTitle: value.fullName ?? ""),
+                        .init(leftTitle: "Адрес", rightTitle: value.location ?? ""),
+                        .init(leftTitle: "Дата добавления", rightTitle: value.createdAt ?? ""),
+                        .init(leftTitle: "Последняя активность", rightTitle: value.lastFixDate ?? ""),
+                        .init(leftTitle: "Вид", rightTitle: value.type ?? "")
+                    ])
+                }
+            }.disposed(by: dispose)
+        }  catch {
+            // error
+        }
+    }
 }
 
 // MARK: - Output

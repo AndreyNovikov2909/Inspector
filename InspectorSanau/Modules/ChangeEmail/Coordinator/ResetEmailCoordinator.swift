@@ -58,14 +58,14 @@ private extension ResetEmailCoordinator {
         case .success():
             if let tabBarVC = rootViewController.tabBarController {
                 tabBarVC.singlerAlert(title: "Проверьте почту",
-                                      description: "Отправили инструкцию для восстановления пароля",
+                                      description: "Cсылка на ввод нового пароля отправлена на почту",
                                       buttonTitle: "Понятно",
                                       delegate: self)
                 return
             }
             
             rootViewController.singlerAlert(title: "Проверьте почту",
-                                            description: "Отправили инструкцию для восстановления пароля",
+                                            description: "Cсылка на ввод нового пароля отправлена на почту",
                                             buttonTitle: "Понятно",
                                             delegate: self)
             

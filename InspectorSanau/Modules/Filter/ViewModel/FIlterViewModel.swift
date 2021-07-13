@@ -45,7 +45,11 @@ final class FilterViewModel: FIlterViewModelPresentable {
         var description: String {
             switch self {
             case .region:
-                return "\(DefaultsService.shared.getCity() ?? ""), \(DefaultsService.shared.getDiscric() ?? "")"
+                if (DefaultsService.shared.getCity() ?? "").isEmpty && (DefaultsService.shared.getDiscric() ?? "").isEmpty {
+                    return ""
+                } else {
+                    return "\(DefaultsService.shared.getCity() ?? ""), \(DefaultsService.shared.getDiscric() ?? "")"
+                }
             case .type:
                 return "Все"
             }

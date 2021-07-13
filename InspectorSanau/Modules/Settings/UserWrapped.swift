@@ -9,18 +9,15 @@ import Foundation
 
 
 protocol UserPresentable {
-    var firstName: String { get set }
-    var middleName: String { get set }
-    var lastName: String { get set }
-    var phoneNumber: String { get set }
-    var email: String { get set }
+    var fullName: String? { get set }
+    var email: String? { get set }
+    var phoneNumber: String? { get set }
+    var roleName: String? { get set }
 }
 
 struct UserWrapped: Decodable, UserPresentable {
-    var firstName: String
-    var middleName: String
-    var lastName: String
-    var phoneNumber: String
-    var email: String
-    var id: Double
+    var fullName: String?
+    var email: String?
+    var phoneNumber: String?
+    var roleName: String?
 }

@@ -91,7 +91,8 @@ private extension HomeCoordinator {
             DefaultsService.shared.setSearchDistric(homeDetail.title)
         case .done:
             let mainDescriptionCoordinator = MainDescriptionCoordinator(navigationController: navigationController,
-                                                                    item: BluetoothWapped(name: homeDetail.originalName))
+                                                                        item: BluetoothWapped(name: homeDetail.originalName),
+                                                                        bluetoothId: homeDetail.originalName)
             mainDescriptionCoordinator.start()
             add(mainDescriptionCoordinator)
         }

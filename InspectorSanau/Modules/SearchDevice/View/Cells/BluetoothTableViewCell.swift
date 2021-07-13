@@ -16,6 +16,9 @@ class BluetoothTableViewCell: UITableViewCell {
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     
+    
+    let realm = try! RealmService()
+    
     // MARK: - Object livecycle
     
     override func awakeFromNib() {
@@ -26,6 +29,17 @@ class BluetoothTableViewCell: UITableViewCell {
     
     func setup(withModel model: BluetoothCellPresentable) {
         titleLabel.text = model.name
+        
+        let value: DeviceObject? = realm.getObjects().filter({ $0.originalName == model.name }).first
+ 
+        value?.scanList.forEach({ (object) in
+  
+            if object.date?.checkContantsDate() != nil {
+                self.titleLabel.textColor = .green
+            } else {
+                self.titleLabel.textColor = UIColor(named: "TextColor2R")
+            }
+        })
     }
 }
 
